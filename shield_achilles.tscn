@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://da0d71m0jypvs"]
+
+[ext_resource type="Script" uid="uid://v86ermkjpn52" path="res://shield_achilles.gd" id="1_1en6b"]
+[ext_resource type="Texture2D" uid="uid://lf0olokiw2ca" path="res://weaponstuff/32x32_PixelWeapons_Free.png" id="2_6gguu"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1en6b"]
+radius = 84.14868
+
+[node name="shield_achilles" type="Area2D" unique_id=941152522]
+collision_layer = 0
+collision_mask = 2
+monitorable = false
+script = ExtResource("1_1en6b")
+
+[node name="32x32PixelWeaponsFree" type="Sprite2D" parent="." unique_id=1374461452]
+position = Vector2(122.50001, 8.499997)
+scale = Vector2(6.2799997, 5.9583335)
+texture = ExtResource("2_6gguu")
+region_enabled = true
+region_rect = Rect2(131, 195, 25, 24)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1295973286]
+position = Vector2(127, 5)
+shape = SubResource("CircleShape2D_1en6b")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

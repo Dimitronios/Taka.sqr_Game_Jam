@@ -1,13 +1,12 @@
 [gd_scene format=3 uid="uid://ccf80uiykqbrp"]
 
 [ext_resource type="Script" uid="uid://cci4u4xm6pymk" path="res://kusanagi.gd" id="1_51ud8"]
-[ext_resource type="Texture2D" uid="uid://lf0olokiw2ca" path="res://32x32_PixelWeapons_Free.png" id="2_fy770"]
+[ext_resource type="Texture2D" uid="uid://lf0olokiw2ca" path="res://weaponstuff/32x32_PixelWeapons_Free.png" id="2_fy770"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_nthgb"]
 radius = 426.78568
 
 [node name="kusanagi" type="Area2D" unique_id=941152522]
-position = Vector2(-0.9999999, 0)
 rotation = 0.09685443
 collision_layer = 0
 collision_mask = 2
@@ -23,7 +22,7 @@ position = Vector2(-53.275257, -20.94629)
 gizmo_extents = 47.7
 
 [node name="Timer" type="Timer" parent="." unique_id=633816227]
-wait_time = 0.352
+wait_time = 0.236
 autostart = true
 
 [node name="32x32PixelWeaponsFree" type="Sprite2D" parent="." unique_id=1158328544]

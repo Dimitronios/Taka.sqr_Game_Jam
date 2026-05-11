@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://clx7wmk6mccrd"]
+
+[ext_resource type="Script" uid="uid://dgm30pbochp6s" path="res://bull_apollo.gd" id="1_ivp2n"]
+[ext_resource type="Texture2D" uid="uid://daxkoerws6ec4" path="res://weaponstuff/1_27.png" id="2_ivp2n"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_naqkr"]
+radius = 30.016663
+
+[node name="bull_apollo" type="Area2D" unique_id=336674534]
+top_level = true
+collision_layer = 0
+collision_mask = 3
+monitorable = false
+script = ExtResource("1_ivp2n")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1998346021]
+position = Vector2(-9, 1)
+shape = SubResource("CircleShape2D_naqkr")
+
+[node name="127" type="Sprite2D" parent="." unique_id=1742814805]
+position = Vector2(-59.999992, -2.0000014)
+scale = Vector2(3.2400002, 1.32)
+texture = ExtResource("2_ivp2n")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

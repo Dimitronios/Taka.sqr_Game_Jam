@@ -3,9 +3,14 @@ extends Area2D
 var damage: int = 1
 var travelled_distance = 0
 
+func _ready():
+	$CollisionShape2D.disabled = true
+	await get_tree().create_timer(0.1).timeout
+	$CollisionShape2D.disabled = false
+
 func _physics_process(delta):
-	const SPEED = 1500
-	const RANGE = 800
+	const SPEED = 1200
+	const RANGE = 700
 
 	position += Vector2.RIGHT.rotated(rotation) * SPEED * delta
 	

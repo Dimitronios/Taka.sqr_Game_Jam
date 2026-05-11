@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://cv2y4dgts5lmh"]
+
+[ext_resource type="Script" uid="uid://bx284ccafuv60" path="res://bull_gugnir.gd" id="1_iynd4"]
+[ext_resource type="Texture2D" uid="uid://lf0olokiw2ca" path="res://weaponstuff/32x32_PixelWeapons_Free.png" id="2_gd60j"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_naqkr"]
+radius = 27.784887
+
+[node name="bull_gugnir" type="Area2D" unique_id=336674534]
+top_level = true
+collision_layer = 0
+collision_mask = 3
+monitorable = false
+script = ExtResource("1_iynd4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1998346021]
+position = Vector2(29, -10.999999)
+rotation = 0.6094247
+shape = SubResource("CircleShape2D_naqkr")
+
+[node name="32x32PixelWeaponsFree" type="Sprite2D" parent="." unique_id=1967311719]
+position = Vector2(-16.799042, -10.600474)
+rotation = 0.7035591
+scale = Vector2(3.94213, 3.824317)
+texture = ExtResource("2_gd60j")
+region_enabled = true
+region_rect = Rect2(29.60968, 223.06717, 35.773453, 32.825623)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

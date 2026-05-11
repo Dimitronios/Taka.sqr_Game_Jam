@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://bww6ob5q43myp"]
+
+[ext_resource type="Script" uid="uid://dn4jcrjnxpt0x" path="res://lighting_bull.gd" id="1_8tal7"]
+[ext_resource type="Texture2D" uid="uid://daw3sobtnmp8i" path="res://weaponstuff/frame-016.png" id="2_8tal7"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7tu2m"]
+radius = 22.94137
+height = 192.0059
+
+[node name="lighting_bull" type="Area2D" unique_id=336674534]
+top_level = true
+collision_layer = 2
+collision_mask = 3
+monitorable = false
+script = ExtResource("1_8tal7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1998346021]
+rotation = -1.5306697
+shape = SubResource("CapsuleShape2D_7tu2m")
+
+[node name="Frame016" type="Sprite2D" parent="." unique_id=320976759]
+position = Vector2(8, 10)
+rotation = 1.5586512
+scale = Vector2(0.4901849, 0.46523067)
+texture = ExtResource("2_8tal7")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

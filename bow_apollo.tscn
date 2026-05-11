@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://djsyx2d785h2b"]
+
+[ext_resource type="Script" uid="uid://dpvlb3wdp1su8" path="res://bow_apollo.gd" id="1_xpjig"]
+[ext_resource type="Texture2D" uid="uid://y5cra8d7q2sa" path="res://weaponstuff/fantasy_epicweapons_pack1_nobg.png" id="2_xpjig"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_nthgb"]
+radius = 426.78568
+
+[node name="Bow_apollo" type="Area2D" unique_id=941152522]
+collision_layer = 0
+collision_mask = 2
+monitorable = false
+script = ExtResource("1_xpjig")
+
+[node name="FantasyEpicweaponsPack1Nobg" type="Sprite2D" parent="." unique_id=1599843210]
+position = Vector2(3.9999962, 84.99999)
+scale = Vector2(2.382353, 2.4516127)
+texture = ExtResource("2_xpjig")
+flip_h = true
+flip_v = true
+region_enabled = true
+region_rect = Rect2(127.041374, -0.006383896, 32.55732, 31.075434)
+
+[node name="ShootingPoint" type="Marker2D" parent="FantasyEpicweaponsPack1Nobg" unique_id=1993003497]
+unique_name_in_owner = true
+show_behind_parent = true
+position = Vector2(2.5185165, -4.078945)
+scale = Vector2(0.41975304, 0.40789476)
+gizmo_extents = 30.6
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=610048026]
+position = Vector2(10, 72)
+shape = SubResource("CircleShape2D_nthgb")
+
+[node name="WeaponPivot" type="Marker2D" parent="." unique_id=1495600283]
+position = Vector2(6, 71)
+gizmo_extents = 47.7
+
+[node name="Timer" type="Timer" parent="." unique_id=633816227]
+wait_time = 1.0279999999999998
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

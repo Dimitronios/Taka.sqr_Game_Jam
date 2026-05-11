@@ -3,7 +3,14 @@
 [ext_resource type="Script" uid="uid://bjpua3hfywlnl" path="res://player.gd" id="1_73bic"]
 [ext_resource type="PackedScene" uid="uid://pbmyh1qru7p" path="res://characters/happy_boo/happy_boo.tscn" id="2_bl5ih"]
 [ext_resource type="PackedScene" uid="uid://cphcr81upg72i" path="res://gun.tscn" id="3_bt0kc"]
-[ext_resource type="PackedScene" uid="uid://ccf80uiykqbrp" path="res://kusanagi.tscn" id="3_hqtel"]
+[ext_resource type="PackedScene" uid="uid://ccf80uiykqbrp" path="res://kusanagi.tscn" id="4_hqtel"]
+[ext_resource type="PackedScene" uid="uid://dn28ychv3mriu" path="res://mjölnir.tscn" id="5_sweqy"]
+[ext_resource type="PackedScene" uid="uid://61is8inwbp5" path="res://pashupatastra.tscn" id="6_2hs0m"]
+[ext_resource type="PackedScene" uid="uid://bht680sd08e4x" path="res://hou_yis.tscn" id="7_1jxqw"]
+[ext_resource type="PackedScene" uid="uid://w6axh521xrih" path="res://gungnir.tscn" id="8_dw050"]
+[ext_resource type="PackedScene" uid="uid://djsyx2d785h2b" path="res://bow_apollo.tscn" id="9_b26j0"]
+[ext_resource type="PackedScene" uid="uid://bbib43odx02s4" path="res://poseidon_trident.tscn" id="10_n7ghd"]
+[ext_resource type="PackedScene" uid="uid://da0d71m0jypvs" path="res://shield_achilles.tscn" id="11_nvl01"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_csncd"]
 size = Vector2(66, 38)
@@ -14,7 +21,7 @@ size = Vector2(84, 54)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a5sny"]
 bg_color = Color(0.623529, 0.866667, 0.317647, 1)
 
-[node name="Player" type="CharacterBody2D" unique_id=1546396198]
+[node name="Player" type="CharacterBody2D" unique_id=1546396198 groups=["player"]]
 motion_mode = 1
 script = ExtResource("1_73bic")
 
@@ -26,9 +33,9 @@ shape = SubResource("RectangleShape2D_csncd")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=473099899]
 
-[node name="kusanagi" parent="." unique_id=941152522 instance=ExtResource("3_hqtel")]
-
 [node name="Gun" parent="." unique_id=1561364329 instance=ExtResource("3_bt0kc")]
+process_mode = 4
+visible = false
 position = Vector2(0, -40)
 
 [node name="HurtBox" type="Area2D" parent="." unique_id=698633368]
@@ -50,3 +57,36 @@ offset_bottom = -150.0
 theme_override_styles/fill = SubResource("StyleBoxFlat_a5sny")
 value = 100.0
 show_percentage = false
+
+[node name="kusanagi" parent="." unique_id=1019086047 instance=ExtResource("4_hqtel")]
+process_mode = 4
+visible = false
+collision_layer = 1
+
+[node name="Mjölnir" parent="." unique_id=765171718 instance=ExtResource("5_sweqy")]
+process_mode = 4
+visible = false
+
+[node name="Pashupatastra" parent="." unique_id=3703033 instance=ExtResource("6_2hs0m")]
+process_mode = 4
+visible = false
+position = Vector2(11, -8)
+
+[node name="Hou_Yis" parent="." unique_id=1113931213 instance=ExtResource("7_1jxqw")]
+process_mode = 4
+visible = false
+
+[node name="gungnir" parent="." unique_id=941152522 instance=ExtResource("8_dw050")]
+process_mode = 4
+visible = false
+
+[node name="Bow_apollo" parent="." unique_id=316759526 instance=ExtResource("9_b26j0")]
+process_mode = 4
+visible = false
+position = Vector2(-38, 10)
+
+[node name="poseidon_trident" parent="." unique_id=579671191 instance=ExtResource("10_n7ghd")]
+process_mode = 4
+visible = false
+
+[node name="shield_achilles" parent="." unique_id=1759438715 instance=ExtResource("11_nvl01")]

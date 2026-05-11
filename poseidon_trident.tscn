@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://bbib43odx02s4"]
+
+[ext_resource type="Script" uid="uid://jui8ln2jsyvl" path="res://poseidon_trident.gd" id="1_sasvp"]
+[ext_resource type="Texture2D" uid="uid://clr0va5cbqd8f" path="res://weaponstuff/trident staff.png" id="2_sasvp"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_nthgb"]
+radius = 426.78568
+
+[node name="poseidon_trident" type="Area2D" unique_id=941152522]
+collision_layer = 0
+collision_mask = 2
+monitorable = false
+script = ExtResource("1_sasvp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=610048026]
+position = Vector2(56, 79)
+shape = SubResource("CircleShape2D_nthgb")
+
+[node name="Timer" type="Timer" parent="." unique_id=633816227]
+wait_time = 1.754
+autostart = true
+
+[node name="TridentStaff" type="Sprite2D" parent="." unique_id=1088178576]
+position = Vector2(75, 75.99999)
+scale = Vector2(4.5416665, 3.9166665)
+texture = ExtResource("2_sasvp")
+
+[node name="ShootingPoint" type="Marker2D" parent="TridentStaff" unique_id=98973795]
+unique_name_in_owner = true
+show_behind_parent = true
+position = Vector2(3.082569, -3.319148)
+scale = Vector2(0.7173108, 0.8582851)
+gizmo_extents = 30.6
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

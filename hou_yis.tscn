@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://bht680sd08e4x"]
+
+[ext_resource type="Script" uid="uid://bqogr0ck6fj3i" path="res://hou_yis.gd" id="1_f1qv0"]
+[ext_resource type="Texture2D" uid="uid://lf0olokiw2ca" path="res://weaponstuff/32x32_PixelWeapons_Free.png" id="2_hnrl8"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_nthgb"]
+radius = 426.78568
+
+[node name="Hou_Yis" type="Area2D" unique_id=941152522]
+collision_layer = 0
+collision_mask = 2
+monitorable = false
+script = ExtResource("1_f1qv0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=610048026]
+position = Vector2(57, -70)
+shape = SubResource("CircleShape2D_nthgb")
+
+[node name="WeaponPivot" type="Marker2D" parent="." unique_id=1495600283]
+position = Vector2(65, -1)
+gizmo_extents = 47.7
+
+[node name="houbow" type="Sprite2D" parent="WeaponPivot" unique_id=240883179]
+position = Vector2(-33, -57)
+scale = Vector2(2.53125, 2.8965518)
+texture = ExtResource("2_hnrl8")
+flip_h = true
+flip_v = true
+region_enabled = true
+region_rect = Rect2(96.90408, 289.07037, 32.10164, 29.369598)
+
+[node name="ShootingPoint" type="Marker2D" parent="WeaponPivot/houbow" unique_id=1993003497]
+unique_name_in_owner = true
+show_behind_parent = true
+position = Vector2(1.5802464, -1.3809519)
+gizmo_extents = 30.6
+
+[node name="Timer" type="Timer" parent="." unique_id=633816227]
+wait_time = 0.787
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

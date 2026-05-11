@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://b1812uiqyq1lt"]
+
+[ext_resource type="Script" uid="uid://ji5oni5qat7u" path="res://bull_mjölnir.gd" id="1_7g68t"]
+[ext_resource type="Texture2D" uid="uid://y5cra8d7q2sa" path="res://weaponstuff/fantasy_epicweapons_pack1_nobg.png" id="2_hn3rd"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_naqkr"]
+radius = 21.023796
+
+[node name="Bull_Mjölnir" type="Area2D" unique_id=336674534]
+top_level = true
+collision_layer = 0
+collision_mask = 3
+monitorable = false
+script = ExtResource("1_7g68t")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1998346021]
+position = Vector2(-7, 8)
+shape = SubResource("CircleShape2D_naqkr")
+
+[node name="FantasyEpicweaponsPack1Nobg2" type="Sprite2D" parent="." unique_id=2037251862]
+position = Vector2(-5, 9)
+scale = Vector2(1.0882353, 1.1333334)
+texture = ExtResource("2_hn3rd")
+flip_h = true
+region_enabled = true
+region_rect = Rect2(64.52179, 128.52788, 34.313354, 30.84346)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

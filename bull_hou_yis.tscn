@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://cytd0be20gubt"]
+
+[ext_resource type="Script" uid="uid://d1ceauwl4kq4s" path="res://bull_hou_yis.gd" id="1_y0060"]
+[ext_resource type="Texture2D" uid="uid://cru56tab2i7rp" path="res://weaponstuff/frame-020.png" id="2_34grm"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_34grm"]
+radius = 13.999999
+height = 29.999998
+
+[node name="bull_hou_yis" type="Area2D" unique_id=336674534]
+top_level = true
+collision_layer = 0
+collision_mask = 3
+monitorable = false
+script = ExtResource("1_y0060")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1998346021]
+position = Vector2(1.0000001, 5.8207605e-11)
+rotation = 1.5718715
+scale = Vector2(0.9999995, 0.9999995)
+shape = SubResource("CapsuleShape2D_34grm")
+
+[node name="houbullet" type="Sprite2D" parent="." unique_id=1938822222]
+position = Vector2(0.99807775, -0.21433608)
+rotation = 1.5618283
+scale = Vector2(0.0031256624, 0.0034645235)
+texture = ExtResource("2_34grm")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

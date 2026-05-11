@@ -1,25 +1,25 @@
 [gd_scene format=3 uid="uid://c87kmi1saoo32"]
 
 [ext_resource type="Script" uid="uid://csau72u6hf3dv" path="res://bull_kusanagi.gd" id="1_6m3gd"]
-[ext_resource type="Texture2D" uid="uid://bp3uc5bs042ck" path="res://Green Effect and Bullet 16x16.png" id="2_nub8g"]
+[ext_resource type="Texture2D" uid="uid://bp3uc5bs042ck" path="res://weaponstuff/Green Effect and Bullet 16x16.png" id="2_nub8g"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_nub8g"]
-radius = 13.038404
+radius = 21.023796
 
 [node name="bull_kusanagi" type="Area2D" unique_id=336674534]
 top_level = true
-collision_layer = 0
+collision_layer = 2
 collision_mask = 3
 monitorable = false
 script = ExtResource("1_6m3gd")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1998346021]
-position = Vector2(2, -8)
+position = Vector2(7, -11)
 shape = SubResource("CircleShape2D_nub8g")
 
 [node name="GreenEffectAndBullet16x16" type="Sprite2D" parent="." unique_id=579064272]
-position = Vector2(-1, -8)
-scale = Vector2(0.55454546, 1)
+position = Vector2(4.375, -11.25)
+scale = Vector2(0.75000006, 1.2096775)
 texture = ExtResource("2_nub8g")
 region_enabled = true
 region_rect = Rect2(158.62286, 49.11133, 55.261993, 31.046066)

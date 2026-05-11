@@ -3,6 +3,7 @@ extends CharacterBody2D
 signal died
 
 var speed = randf_range(200, 300)
+
 var health = 3
 
 @onready var player = get_node("/root/Game/Player")
@@ -24,7 +25,4 @@ func take_damage(damage_amount: int):
 		var smoke = smoke_scene.instantiate()
 		get_parent().add_child(smoke)
 		smoke.global_position = global_position
-	
-		player.gain_xp(1)
-		
 		queue_free()
