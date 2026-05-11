@@ -1,9 +1,13 @@
 extends Node2D
-
+@onready var pause_menu = $pause_menu
+ 
 const MAX_MOBS = 10
 
 var mob_count = 0
 
+func _ready() -> void:
+	$pause_menu.visible = false
+ 
 func spawn_mob():
 	if mob_count >= MAX_MOBS:
 		return
@@ -41,4 +45,8 @@ func _process(_delta):
 		var minutes = time_left / 60
 		var seconds = time_left % 60
 		time_label.text = "%02d:%02d" % [minutes, seconds]
-		
+	if Input.is_action_just_pressed("ui_cancel"):
+		toggle_pause()
+func toggle_pause():
+	get_tree().paused = !get_tree().paused
+	$pause_menu.visible = get_tree().paused

@@ -1,0 +1,84 @@
+[gd_scene format=3 uid="uid://dun1cpardk2xw"]
+
+[ext_resource type="Script" uid="uid://dsgxioo8wstff" path="res://game.gd" id="1_qclsr"]
+[ext_resource type="PackedScene" uid="uid://dsw8raqgacxsc" path="res://player.tscn" id="2_a7q7f"]
+[ext_resource type="Texture2D" uid="uid://q5tuijwqsnc2" path="res://background.png" id="2_l26od"]
+
+[sub_resource type="Curve2D" id="Curve2D_cp6e5"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -806, -371, 0, 0, 0, 0, -1004, -196, 0, 0, 0, 0, -1091, 225, 0, 0, 0, 0, -1034, 715, 0, 0, 0, 0, -780, 810, 0, 0, 0, 0, -328, 855, 0, 0, 0, 0, 154, 878, 0, 0, 0, 0, 690, 795, 0, 0, 0, 0, 1009, 658, 0, 0, 0, 0, 1164, 442, 0, 0, 0, 0, 1157, 43, 0, 0, 0, 0, 1104, -177, 0, 0, 0, 0, 971, -257, 0, 0, 0, 0, 777, -345, 0, 0, 0, 0, 656, -413, 0, 0, 0, 0, 25, -420, 0, 0, 0, 0, -795, -367, 0, 0, 0, 0, -806, -371)
+}
+point_count = 18
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l26od"]
+bg_color = Color(0.23529412, 0.8745098, 0.8627451, 1)
+
+[node name="Game" type="Node2D" unique_id=327747119]
+y_sort_enabled = true
+script = ExtResource("1_qclsr")
+
+[node name="Timer2" type="Timer" parent="." unique_id=1969242011]
+wait_time = 60.0
+one_shot = true
+autostart = true
+
+[node name="Timer" type="Timer" parent="." unique_id=173639759]
+wait_time = 0.3
+autostart = true
+
+[node name="Player" parent="." unique_id=1174028023 instance=ExtResource("2_a7q7f")]
+
+[node name="Background" type="Sprite2D" parent="." unique_id=2026518299]
+z_index = -1
+position = Vector2(-28.427902, -152.99991)
+scale = Vector2(2.0580351, 2.6350627)
+texture = ExtResource("2_l26od")
+
+[node name="ArenaBorders" type="StaticBody2D" parent="." unique_id=1805192637]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ArenaBorders" unique_id=254754903]
+build_mode = 1
+polygon = PackedVector2Array(-1525, -694, -1622, -540, -1701, -389, -1755, -189, -1755, 200, -1726, 571, -1588, 814, -1296, 1027, -999, 1064, -644, 1077, -477, 1098, -464, 1006, -385, 985, -302, 1010, -302, 1052, 229, 1064, 242, 985, 400, 981, 413, 1073, 960, 1093, 1252, 1027, 1407, 918, 1541, 759, 1678, 534, 1687, 354, 1708, 87, 1683, -168, 1549, -506, 1470, -728, 1315, -811, 1064, -953, 693, -1029, 304, -1045, -460, -1041, -820, -1024, -1166, -907)
+
+[node name="Path2D" type="Path2D" parent="." unique_id=1949369106]
+position = Vector2(-46.301697, -323.41452)
+scale = Vector2(1.3370289, 1.4537752)
+curve = SubResource("Curve2D_cp6e5")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D" unique_id=949713007]
+unique_name_in_owner = true
+position = Vector2(-806, -371)
+rotation = 2.4177787
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=35867265]
+
+[node name="TimeLabel" type="Label" parent="CanvasLayer" unique_id=432457755]
+anchors_preset = -1
+anchor_left = 0.4841146
+anchor_right = 0.5158854
+anchor_bottom = 0.021296296
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 39
+text = "TIME 90"
+visible_characters = 7
+metadata/_edit_use_anchors_ = true
+
+[node name="XPBar" type="ProgressBar" parent="CanvasLayer" unique_id=1665603114]
+unique_name_in_owner = true
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -75.0
+offset_top = -27.0
+offset_right = 75.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/fill = SubResource("StyleBoxFlat_l26od")
+value = 100.0
+metadata/_edit_use_anchors_ = true
+
+[connection signal="timeout" from="Timer2" to="." method="_on_timer_2_timeout"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="health_depleted" from="Player" to="." method="_on_player_health_depleted"]

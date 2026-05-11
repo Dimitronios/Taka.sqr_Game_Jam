@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://c5cwymacpy7hs"]
+
+[ext_resource type="Script" path="res://MainMenu.gd" id="1_06t4h"]
+[ext_resource type="Texture2D" uid="uid://dfa3tso5piv6c" path="res://Large Buttons/Large Buttons/New game Button.png" id="2_glbon"]
+[ext_resource type="Texture2D" uid="uid://ddvlcie0rj8sp" path="res://Large Buttons/Colored Large Buttons/New Game  col_Button.png" id="3_nlkkf"]
+[ext_resource type="Texture2D" uid="uid://dyn6ghvhdwtfm" path="res://Large Buttons/Large Buttons/Quit Button.png" id="4_qe12f"]
+[ext_resource type="Texture2D" uid="uid://dq28l4hkkra4s" path="res://Large Buttons/Colored Large Buttons/Quit  col_Button.png" id="5_8qtwp"]
+
+[node name="Main Menu" type="Node2D" unique_id=1365875483]
+
+[node name="Control" type="Control" parent="." unique_id=1784071520]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_right = 1916.0
+offset_bottom = 1084.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_06t4h")
+
+[node name="Start" type="TextureButton" parent="Control" unique_id=350425109]
+layout_mode = 0
+offset_left = 629.0
+offset_top = 429.0
+offset_right = 1237.0
+offset_bottom = 629.0
+texture_normal = ExtResource("2_glbon")
+texture_hover = ExtResource("3_nlkkf")
+script = ExtResource("1_06t4h")
+
+[node name="Quit" type="TextureButton" parent="Control" unique_id=451991389]
+layout_mode = 0
+offset_left = 640.0
+offset_top = 699.0
+offset_right = 1240.0
+offset_bottom = 907.0
+texture_normal = ExtResource("4_qe12f")
+texture_hover = ExtResource("5_8qtwp")
+
+[connection signal="pressed" from="Control/Start" to="Control/Start" method="_on_pressed"]
+[connection signal="pressed" from="Control/Quit" to="Control/Start" method="_on_quit_pressed"]
