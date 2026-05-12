@@ -607,7 +607,7 @@ texture = ExtResource("5_q2t1e")
 offset = Vector2(0, 6)
 
 [node name="SquareLowerLegL" type="Sprite2D" parent="Colorizer/SquareUpperLegL" unique_id=491687320]
-position = Vector2(-4.76837e-07, 14)
+position = Vector2(0, 14)
 texture = ExtResource("4_plnsd")
 offset = Vector2(0, 6)
 

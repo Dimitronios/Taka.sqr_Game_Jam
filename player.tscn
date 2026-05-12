@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bjpua3hfywlnl" path="res://player.gd" id="1_73bic"]
 [ext_resource type="PackedScene" uid="uid://pbmyh1qru7p" path="res://characters/happy_boo/happy_boo.tscn" id="2_bl5ih"]
+[ext_resource type="Texture2D" uid="uid://dkomx6ecxo8jr" path="res://Eucrasius3.png" id="2_sweqy"]
 [ext_resource type="PackedScene" uid="uid://cphcr81upg72i" path="res://gun.tscn" id="3_bt0kc"]
 [ext_resource type="PackedScene" uid="uid://ccf80uiykqbrp" path="res://kusanagi.tscn" id="3_hqtel"]
 
@@ -17,6 +18,12 @@ bg_color = Color(0.623529, 0.866667, 0.317647, 1)
 [node name="Player" type="CharacterBody2D" unique_id=1546396198]
 motion_mode = 1
 script = ExtResource("1_73bic")
+
+[node name="Eucrasius" type="Node2D" parent="." unique_id=1454132039]
+
+[node name="Sprite2D" type="Sprite2D" parent="Eucrasius" unique_id=725975014]
+visible = false
+texture = ExtResource("2_sweqy")
 
 [node name="HappyBoo" parent="." unique_id=984748070 instance=ExtResource("2_bl5ih")]
 unique_name_in_owner = true

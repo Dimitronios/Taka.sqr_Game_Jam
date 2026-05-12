@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://da2oi4e8lou8t"]
+
+[node name="Eucrasius" type="Node2D" unique_id=798932447]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=393080983]
+position = Vector2(-5, -3)
+scale = Vector2(0.9921875, 0.99609375)
