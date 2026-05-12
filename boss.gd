@@ -20,10 +20,12 @@ var is_attacking: bool = false
 # --- NODES ---
 @onready var player = get_node("/root/BossLevel/Player")
 @onready var shooting_point = $ShootingPoint
+@onready var dash_hitbox = $DashHitbox # <--- Moved this up here!
 
 func _ready():
 	current_health = max_health
 	$Sprite2D.texture = default_sprite
+	dash_hitbox.monitoring = false # <--- Make sure it starts turned off
 	
 	await get_tree().create_timer(2.0).timeout
 	trigger_stinger_combo()
@@ -57,6 +59,7 @@ func _on_basic_attack_timer_timeout():
 func trigger_stinger_combo():
 	is_attacking = true
 	$Sprite2D.texture = homing_sprite 
+	dash_hitbox.monitoring = true # <--- TURN HITBOX ON
 	
 	var dash_speed = player.speed * 0.70 
 	
@@ -75,10 +78,12 @@ func trigger_stinger_combo():
 		await get_tree().create_timer(0.3).timeout
 
 	$Sprite2D.texture = default_sprite
+	dash_hitbox.monitoring = false # <--- TURN HITBOX OFF
 	is_attacking = false
 
 # --- HEALTH & PHASES ---
 func take_damage(amount: int):
+	print("DIONYSUS GOT SHOT! Damage: ", amount)
 	current_health -= amount
 	var hp_percent = float(current_health) / float(max_health)
 	check_phase_triggers(hp_percent)
@@ -144,4 +149,7 @@ func fire_nova(wave_count: int):
 func die():
 	queue_free()
 
-@onready var dash_hitbox = $DashHitbox
+# --- HITBOX DAMAGE ---
+func _on_dash_hitbox_body_entered(body):
+	if body.is_in_group("player") and body.has_method("take_damage"):
+		body.take_damage(2) # Set to 2 damage, adjust to whatever you like!

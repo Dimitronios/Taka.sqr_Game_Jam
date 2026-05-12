@@ -4,7 +4,7 @@ var damage: int = 1
 var travelled_distance = 0
 
 func _physics_process(delta):
-	const SPEED = 600 # Lowered from 1000 so it's slower than the player's bullet
+	const SPEED = 1750 # Lowered from 1000 so it's slower than the player's bullet
 	const RANGE = 1200
 
 	# Moves forward based on its current rotation
