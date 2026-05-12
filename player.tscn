@@ -4,12 +4,12 @@
 [ext_resource type="PackedScene" uid="uid://pbmyh1qru7p" path="res://characters/happy_boo/happy_boo.tscn" id="2_bl5ih"]
 [ext_resource type="PackedScene" uid="uid://cphcr81upg72i" path="res://gun.tscn" id="3_bt0kc"]
 [ext_resource type="PackedScene" uid="uid://ccf80uiykqbrp" path="res://kusanagi.tscn" id="4_hqtel"]
-[ext_resource type="PackedScene" path="res://mjölnir.tscn" id="5_sweqy"]
-[ext_resource type="PackedScene" path="res://pashupatastra.tscn" id="6_2hs0m"]
+[ext_resource type="PackedScene" uid="uid://dn28ychv3mriu" path="res://mjölnir.tscn" id="5_sweqy"]
+[ext_resource type="PackedScene" uid="uid://61is8inwbp5" path="res://pashupatastra.tscn" id="6_2hs0m"]
 [ext_resource type="PackedScene" uid="uid://c2mcuoyumtw7y" path="res://hou_yis.tscn" id="7_1jxqw"]
 [ext_resource type="PackedScene" uid="uid://bkk50m61iuphq" path="res://gungnir.tscn" id="8_dw050"]
-[ext_resource type="PackedScene" path="res://bow_apollo.tscn" id="9_b26j0"]
-[ext_resource type="PackedScene" path="res://poseidon_trident.tscn" id="10_n7ghd"]
+[ext_resource type="PackedScene" uid="uid://djsyx2d785h2b" path="res://bow_apollo.tscn" id="9_b26j0"]
+[ext_resource type="PackedScene" uid="uid://bbib43odx02s4" path="res://poseidon_trident.tscn" id="10_n7ghd"]
 [ext_resource type="PackedScene" uid="uid://nswij5255tln" path="res://shield_achilles.tscn" id="11_nvl01"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_csncd"]
@@ -60,28 +60,39 @@ show_percentage = false
 
 [node name="kusanagi" parent="." unique_id=1019086047 groups=["Weapons"] instance=ExtResource("4_hqtel")]
 process_mode = 4
+visible = false
 collision_layer = 1
 
 [node name="Mjölnir" parent="." unique_id=765171718 groups=["Weapons"] instance=ExtResource("5_sweqy")]
 process_mode = 4
+visible = false
 
+<<<<<<< HEAD
 [node name="Pashupatastra" parent="." unique_id=3703033 groups=["Weapons"] instance=ExtResource("6_2hs0m")]
 process_mode = 4
+=======
+[node name="Pashupatastra" parent="." unique_id=3703033 instance=ExtResource("6_2hs0m")]
+>>>>>>> 7837b9ad7ced1e309d633e963f922fbd8a2262f9
 position = Vector2(11, -8)
 
 [node name="Hou_Yis" parent="." unique_id=1113931213 groups=["Weapons"] instance=ExtResource("7_1jxqw")]
 process_mode = 4
+visible = false
 
 [node name="gungnir" parent="." unique_id=941152522 groups=["Weapons"] instance=ExtResource("8_dw050")]
 process_mode = 4
+visible = false
 
 [node name="Bow_apollo" parent="." unique_id=316759526 groups=["Weapons"] instance=ExtResource("9_b26j0")]
 process_mode = 4
+visible = false
 position = Vector2(-38, 10)
 
 [node name="poseidon_trident" parent="." unique_id=579671191 groups=["Weapons"] instance=ExtResource("10_n7ghd")]
 process_mode = 4
+visible = false
 
 [node name="shield_achilles" parent="." unique_id=1759438715 groups=["Weapons"] instance=ExtResource("11_nvl01")]
 process_mode = 4
+visible = false
 position = Vector2(295, -92)
