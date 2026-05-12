@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://cre5tg84nkbwe"]
+
+[ext_resource type="Script" uid="uid://dfjept35dvmqd" path="res://bull_pashupatastra.gd" id="1_hrsf4"]
+[ext_resource type="Texture2D" uid="uid://wldw0soca7da" path="res://weaponstuff/1_22.png" id="2_hrsf4"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_b4dy8"]
+radius = 58.999977
+height = 456.0078
+
+[node name="bull_pashupatastra" type="Area2D" unique_id=336674534]
+top_level = true
+collision_layer = 0
+collision_mask = 3
+monitorable = false
+script = ExtResource("1_hrsf4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1998346021]
+position = Vector2(-6.999998, -6)
+rotation = -1.5715928
+shape = SubResource("CapsuleShape2D_b4dy8")
+
+[node name="122" type="Sprite2D" parent="." unique_id=482116591]
+position = Vector2(-68, -16.000002)
+scale = Vector2(10.55, 5.25)
+texture = ExtResource("2_hrsf4")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

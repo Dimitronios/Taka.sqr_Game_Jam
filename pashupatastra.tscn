@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://61is8inwbp5"]
+
+[ext_resource type="Script" uid="uid://bu7klik8utxdc" path="res://pashupatastra.gd" id="1_bkqm0"]
+[ext_resource type="Texture2D" uid="uid://lf0olokiw2ca" path="res://weaponstuff/32x32_PixelWeapons_Free.png" id="2_87ddt"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_nthgb"]
+radius = 426.78568
+
+[node name="Pashupatastra" type="Area2D" unique_id=941152522]
+collision_layer = 0
+collision_mask = 2
+monitorable = false
+script = ExtResource("1_bkqm0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=610048026]
+position = Vector2(38, 22)
+shape = SubResource("CircleShape2D_nthgb")
+
+[node name="WeaponPivot" type="Marker2D" parent="." unique_id=1495600283]
+position = Vector2(79, -11)
+gizmo_extents = 47.7
+
+[node name="32x32PixelWeaponsFree" type="Sprite2D" parent="WeaponPivot" unique_id=494833007]
+position = Vector2(-18.000002, 30)
+scale = Vector2(2.6000004, 3.0468748)
+texture = ExtResource("2_87ddt")
+flip_h = true
+region_enabled = true
+region_rect = Rect2(97.73288, 319.3635, 30.457916, 32.77118)
+
+[node name="ShootingPoint" type="Marker2D" parent="WeaponPivot/32x32PixelWeaponsFree" unique_id=1993003497]
+unique_name_in_owner = true
+show_behind_parent = true
+position = Vector2(5.0000005, 3.9384618)
+gizmo_extents = 30.6
+
+[node name="Timer" type="Timer" parent="." unique_id=633816227]
+wait_time = 5.105
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

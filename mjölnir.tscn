@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://dn28ychv3mriu"]
+
+[ext_resource type="Script" uid="uid://dlxjjtoglm78w" path="res://mjölnir.gd" id="1_r1nee"]
+[ext_resource type="Texture2D" uid="uid://y5cra8d7q2sa" path="res://weaponstuff/fantasy_epicweapons_pack1_nobg.png" id="2_ltywb"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_nthgb"]
+radius = 426.78568
+
+[node name="Mjölnir" type="Area2D" unique_id=941152522]
+collision_layer = 0
+collision_mask = 2
+monitorable = false
+script = ExtResource("1_r1nee")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=610048026]
+position = Vector2(-69, 22)
+shape = SubResource("CircleShape2D_nthgb")
+
+[node name="FantasyEpicweaponsPack1Nobg2" type="Sprite2D" parent="." unique_id=1256886936]
+position = Vector2(-66, 38)
+scale = Vector2(3.2577863, 3.3616164)
+texture = ExtResource("2_ltywb")
+region_enabled = true
+region_rect = Rect2(64.52179, 128.52788, 34.313354, 30.84346)
+
+[node name="ShootingPoint" type="Marker2D" parent="FantasyEpicweaponsPack1Nobg2" unique_id=98973795]
+unique_name_in_owner = true
+show_behind_parent = true
+position = Vector2(35, -11)
+gizmo_extents = 30.6
+
+[node name="Timer" type="Timer" parent="." unique_id=633816227]
+wait_time = 2.005
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

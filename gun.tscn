@@ -4,9 +4,9 @@
 [ext_resource type="Texture2D" uid="uid://cswb5do8rrj7q" path="res://pistol/pistol.png" id="2_idur6"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_nthgb"]
-radius = 987.0
+radius = 426.78568
 
-[node name="Gun" type="Area2D" unique_id=941152522]
+[node name="baseweapon" type="Area2D" unique_id=941152522]
 collision_layer = 0
 collision_mask = 2
 monitorable = false
@@ -30,7 +30,7 @@ position = Vector2(35, -11)
 gizmo_extents = 30.6
 
 [node name="Timer" type="Timer" parent="." unique_id=633816227]
-wait_time = 0.353
+wait_time = 0.787
 autostart = true
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

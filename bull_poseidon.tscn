@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://4lr4406li1de"]
+
+[ext_resource type="Script" uid="uid://bvvxnmt5fu73o" path="res://bull_poseidon.gd" id="1_8a0n2"]
+[ext_resource type="Texture2D" uid="uid://clr0va5cbqd8f" path="res://weaponstuff/trident staff.png" id="2_8a0n2"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_naqkr"]
+radius = 16.03122
+
+[node name="bull_poseidon" type="Area2D" unique_id=336674534]
+top_level = true
+collision_layer = 0
+collision_mask = 3
+monitorable = false
+script = ExtResource("1_8a0n2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1998346021]
+position = Vector2(6, 0)
+shape = SubResource("CircleShape2D_naqkr")
+
+[node name="TridentStaff" type="Sprite2D" parent="." unique_id=229809813]
+position = Vector2(-1.8933527, 0.13166696)
+rotation = 0.80238
+scale = Vector2(1.424654, 1.482975)
+texture = ExtResource("2_8a0n2")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -74,7 +74,7 @@ Settings/Show_Tooltips=true
 
 [application]
 
-config/name="Your First 2D Game With Godot 4 (GDQuest)"
+config/name="Game Jam Taka.sqr Main"
 run/main_scene="uid://c5cwymacpy7hs"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.png"
@@ -92,6 +92,11 @@ project/assembly_name="Getting started with Godot 4"
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/colorpicker_presets/plugin.cfg")
+
+[global_group]
+
+player=""
+enemies=""
 
 [input]
 
