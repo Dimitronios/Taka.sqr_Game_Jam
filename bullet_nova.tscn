@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://crxl5i7m4bdtj"]
 
-[ext_resource type="Texture2D" uid="uid://yxj3vdcx25v7" path="res://6.png" id="1_kf4ms"]
+[ext_resource type="Texture2D" uid="uid://yxj3vdcx25v7" path="res://grape.png" id="1_kf4ms"]
 [ext_resource type="Script" uid="uid://bk1msk0yjry6t" path="res://bullet_nova.gd" id="1_t1ify"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_t1ify"]
