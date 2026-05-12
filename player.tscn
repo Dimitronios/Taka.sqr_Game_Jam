@@ -22,9 +22,10 @@ size = Vector2(84, 54)
 bg_color = Color(0.623529, 0.866667, 0.317647, 1)
 
 [node name="Player" type="CharacterBody2D" unique_id=1546396198 groups=["player"]]
+collision_mask = 2
 motion_mode = 1
 script = ExtResource("1_73bic")
-max_health = 30
+max_health = 40
 
 [node name="HappyBoo" parent="." unique_id=984748070 instance=ExtResource("2_bl5ih")]
 unique_name_in_owner = true
@@ -67,6 +68,8 @@ process_mode = 4
 visible = false
 
 [node name="Pashupatastra" parent="." unique_id=3703033 instance=ExtResource("6_2hs0m")]
+process_mode = 4
+visible = false
 position = Vector2(11, -8)
 
 [node name="Hou_Yis" parent="." unique_id=1113931213 instance=ExtResource("7_1jxqw")]

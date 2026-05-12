@@ -1,72 +1,82 @@
 extends CharacterBody2D
 
-# --- PRELOAD BULLETS ---
+# --- SIGNALS ---
+signal health_changed(current_hp, max_hp)
+
+# --- PRELOADS ---
 const GRAPE_BULLET = preload("res://grape_bullet.tscn")
 const NOVA_BULLET = preload("res://nova_bullet.tscn")
+# Ensure this path matches the name of your victory scene!
+const VICTORY_SCREEN = preload("res://victory_screen.tscn") 
 
+@export_group("Visuals")
 @export var default_sprite: Texture2D
 @export var homing_sprite: Texture2D
 @export var nova_sprite: Texture2D
 
-var max_health: int = 1000
-var current_health: int = 1000
+@export_group("Stats")
+@export var max_health: int = 200 
+@onready var current_health: int = max_health
+@export var stinger_pause: float = 1.0 
 
+# --- ATTACK TRACKING ---
 var current_phase: int = 1
-var nova_fired_this_phase: bool = false
+var nova_stage: int = 0 
+var homing_triggered_75: bool = false
+var homing_triggered_50: bool = false
+var homing_triggered_25: bool = false
 
-var base_speed: float = 100.0
+var base_speed: float = 120.0 
 var is_attacking: bool = false
 
 # --- NODES ---
 @onready var player = get_node("/root/BossLevel/Player")
 @onready var shooting_point = $ShootingPoint
-@onready var dash_hitbox = $DashHitbox # <--- Moved this up here!
+@onready var dash_hitbox = $DashHitbox 
 
 func _ready():
 	current_health = max_health
 	$Sprite2D.texture = default_sprite
-	dash_hitbox.monitoring = false # <--- Make sure it starts turned off
+	dash_hitbox.monitoring = false 
+	
+	await get_tree().process_frame
+	health_changed.emit(current_health, max_health)
 	
 	await get_tree().create_timer(2.0).timeout
 	trigger_stinger_combo()
 
 func _physics_process(delta):
 	if player != null:
-		# Always make the shooting point aim at the player for basic attacks
 		shooting_point.look_at(player.global_position)
-		
-		# Only walk toward the player if he isn't dashing or casting the Nova
-		if is_attacking == false:
+		if not is_attacking:
 			var direction = global_position.direction_to(player.global_position)
 			velocity = direction * base_speed
 			move_and_slide()
 
-# --- BASIC ATTACK LOGIC ---
+# --- BASIC ATTACK ---
 func shoot_grape():
-	# Don't shoot basic grapes while he is doing a big attack (stinger or nova)
-	if player == null or is_attacking == true:
+	if player == null or is_attacking:
 		return
-		
 	var new_grape = GRAPE_BULLET.instantiate()
 	new_grape.global_position = shooting_point.global_position
 	new_grape.rotation = shooting_point.rotation
+	if "damage" in new_grape:
+		new_grape.damage = 1
 	get_tree().root.add_child(new_grape)
 
 func _on_basic_attack_timer_timeout():
 	shoot_grape()
 
-# --- STINGER / HOMING ATTACK ---
+# --- STINGER / DASH ATTACK ---
 func trigger_stinger_combo():
 	is_attacking = true
 	$Sprite2D.texture = homing_sprite 
-	dash_hitbox.monitoring = true # <--- TURN HITBOX ON
+	dash_hitbox.monitoring = true 
 	
-	var dash_speed = player.speed * 0.70 
+	var dash_speed = 1750 * 0.45 
 	
-	for i in range(3):
-		if player == null:
-			break
-			
+	for i in range(1): 
+		if player == null: break
 		var target_position = player.global_position
 		var distance = global_position.distance_to(target_position)
 		var dash_time = distance / dash_speed
@@ -75,81 +85,68 @@ func trigger_stinger_combo():
 		tween.tween_property(self, "global_position", target_position, dash_time).set_trans(Tween.TRANS_EXPO).set_ease(Tween.EASE_OUT)
 		
 		await tween.finished
-		await get_tree().create_timer(0.3).timeout
+		await get_tree().create_timer(stinger_pause).timeout 
 
 	$Sprite2D.texture = default_sprite
-	dash_hitbox.monitoring = false # <--- TURN HITBOX OFF
+	dash_hitbox.monitoring = false 
 	is_attacking = false
 
 # --- HEALTH & PHASES ---
 func take_damage(amount: int):
-	print("DIONYSUS GOT SHOT! Damage: ", amount)
 	current_health -= amount
-	var hp_percent = float(current_health) / float(max_health)
-	check_phase_triggers(hp_percent)
+	health_changed.emit(current_health, max_health) 
+	var hp_percent = (float(current_health) / max_health) * 100.0
+	check_triggers(hp_percent)
 	if current_health <= 0:
 		die()
 
-func check_phase_triggers(hp_percent: float):
-	if current_phase == 1:
-		if hp_percent <= 0.87 and not nova_fired_this_phase:
-			fire_nova(1) 
-			nova_fired_this_phase = true
-		if hp_percent <= 0.75:
-			trigger_stinger_combo() 
-			current_phase = 2
-			nova_fired_this_phase = false 
+func check_triggers(hp_percent: float):
+	if hp_percent <= 75.0 and not homing_triggered_75:
+		trigger_stinger_combo(); homing_triggered_75 = true
+	elif hp_percent <= 50.0 and not homing_triggered_50:
+		trigger_stinger_combo(); homing_triggered_50 = true
+	elif hp_percent <= 25.0 and not homing_triggered_25:
+		trigger_stinger_combo(); homing_triggered_25 = true
 
-	elif current_phase == 2:
-		if hp_percent <= 0.62 and not nova_fired_this_phase:
-			fire_nova(2) 
-			nova_fired_this_phase = true
-		if hp_percent <= 0.50:
-			trigger_stinger_combo()
-			current_phase = 3
-			nova_fired_this_phase = false
-
-	elif current_phase == 3:
-		if hp_percent <= 0.37 and not nova_fired_this_phase:
-			fire_nova(3) 
-			nova_fired_this_phase = true
-		if hp_percent <= 0.25:
-			trigger_stinger_combo()
-			current_phase = 4
-			nova_fired_this_phase = false
-			
-	elif current_phase == 4:
-		if hp_percent <= 0.12 and not nova_fired_this_phase:
-			fire_nova(4) 
-			nova_fired_this_phase = true
+	if hp_percent <= 100.0 and hp_percent > 75.0 and nova_stage == 0:
+		fire_nova(1); nova_stage = 1
+	elif hp_percent <= 75.0 and hp_percent > 50.0 and nova_stage == 1:
+		fire_nova(2); nova_stage = 2
+	elif hp_percent <= 50.0 and hp_percent > 25.0 and nova_stage == 2:
+		fire_nova(3); nova_stage = 3
+	elif hp_percent <= 25.0 and hp_percent > 0.0 and nova_stage == 3:
+		fire_nova(4); nova_stage = 4
 
 # --- BULLET NOVA ---
 func fire_nova(wave_count: int):
 	is_attacking = true
 	$Sprite2D.texture = nova_sprite
-	
-	# Loop for however many rounds the phase dictates
 	for round_num in range(wave_count):
-		
-		# Spawn 16 bullets in a perfect circle
-		for i in range(16):
+		for i in range(10):
 			var bullet = NOVA_BULLET.instantiate()
-			bullet.global_position = global_position
-			# TAU is 360 degrees. Dividing by 16 gives perfect spacing
-			bullet.rotation = i * (TAU / 16.0) 
-			get_tree().root.add_child(bullet)
+			bullet.global_position = shooting_point.global_position
+			bullet.rotation = i * (TAU / 10.0) 
 			
-		# Add a delay between bursts if shooting multiple waves
+			if "damage" in bullet: bullet.damage = 4 
+			if "speed" in bullet: bullet.speed = 1750
+			get_tree().root.add_child(bullet)
 		if wave_count > 1:
 			await get_tree().create_timer(0.5).timeout
-			
 	$Sprite2D.texture = default_sprite
 	is_attacking = false
 
+# --- DEATH & VICTORY ---
 func die():
+	# 1. Stop the game
+	get_tree().paused = true
+	
+	# 2. Show the victory screen
+	var victory = VICTORY_SCREEN.instantiate()
+	get_tree().root.add_child(victory)
+	
+	# 3. Clean up the boss
 	queue_free()
 
-# --- HITBOX DAMAGE ---
 func _on_dash_hitbox_body_entered(body):
 	if body.is_in_group("player") and body.has_method("take_damage"):
-		body.take_damage(2) # Set to 2 damage, adjust to whatever you like!
+		body.take_damage(4)

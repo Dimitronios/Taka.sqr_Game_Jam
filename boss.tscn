@@ -15,7 +15,8 @@ height = 636.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lnbgr"]
 size = Vector2(614, 586)
 
-[node name="Boss" type="CharacterBody2D" unique_id=1063840542]
+[node name="Boss" type="CharacterBody2D" unique_id=1063840542 groups=["enemies"]]
+collision_layer = 2
 script = ExtResource("1_6xxrv")
 default_sprite = ExtResource("1_0bnu1")
 homing_sprite = ExtResource("3_lnbgr")
@@ -36,13 +37,14 @@ position = Vector2(5, 25)
 shape = SubResource("CapsuleShape2D_skx2t")
 
 [node name="BasicAttackTimer" type="Timer" parent="." unique_id=1715455103]
-wait_time = 1.5
 autostart = true
 
 [node name="ShootingPoint" type="Marker2D" parent="." unique_id=970956174]
-position = Vector2(-133, -73)
+position = Vector2(-250, -77)
+gizmo_extents = 168.9
 
 [node name="DashHitbox" type="Area2D" parent="." unique_id=1175883701]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DashHitbox" unique_id=270637886]
 position = Vector2(-66, 21)

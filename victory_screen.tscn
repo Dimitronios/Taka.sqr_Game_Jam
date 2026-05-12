@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://b6w4vjslk15br"]
+
+[ext_resource type="Script" uid="uid://bj577jwlhcvoc" path="res://victory_screen.gd" id="1_qyds8"]
+[ext_resource type="Texture2D" uid="uid://dxav2jd5w2qdt" path="res://victory.png" id="2_r8dr5"]
+
+[node name="VictoryScreen" type="CanvasLayer" unique_id=1431081395]
+script = ExtResource("1_qyds8")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1734033613]
+process_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_r8dr5")
+expand_mode = 1
+stretch_mode = 3
+metadata/_edit_use_anchors_ = true
