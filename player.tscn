@@ -21,7 +21,7 @@ size = Vector2(84, 54)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a5sny"]
 bg_color = Color(0.623529, 0.866667, 0.317647, 1)
 
-[node name="Player" type="CharacterBody2D" unique_id=1546396198 groups=["player"]]
+[node name="Player" type="CharacterBody2D" unique_id=1546396198 groups=["Weapons", "player"]]
 motion_mode = 1
 script = ExtResource("1_73bic")
 
@@ -58,30 +58,30 @@ theme_override_styles/fill = SubResource("StyleBoxFlat_a5sny")
 value = 100.0
 show_percentage = false
 
-[node name="kusanagi" parent="." unique_id=1019086047 instance=ExtResource("4_hqtel")]
+[node name="kusanagi" parent="." unique_id=1019086047 groups=["Weapons"] instance=ExtResource("4_hqtel")]
 process_mode = 4
 collision_layer = 1
 
-[node name="Mjölnir" parent="." unique_id=765171718 instance=ExtResource("5_sweqy")]
+[node name="Mjölnir" parent="." unique_id=765171718 groups=["Weapons"] instance=ExtResource("5_sweqy")]
 process_mode = 4
 
-[node name="Pashupatastra" parent="." unique_id=3703033 instance=ExtResource("6_2hs0m")]
+[node name="Pashupatastra" parent="." unique_id=3703033 groups=["Weapons"] instance=ExtResource("6_2hs0m")]
 process_mode = 4
 position = Vector2(11, -8)
 
-[node name="Hou_Yis" parent="." unique_id=1113931213 instance=ExtResource("7_1jxqw")]
+[node name="Hou_Yis" parent="." unique_id=1113931213 groups=["Weapons"] instance=ExtResource("7_1jxqw")]
 process_mode = 4
 
-[node name="gungnir" parent="." unique_id=941152522 instance=ExtResource("8_dw050")]
+[node name="gungnir" parent="." unique_id=941152522 groups=["Weapons"] instance=ExtResource("8_dw050")]
 process_mode = 4
 
-[node name="Bow_apollo" parent="." unique_id=316759526 instance=ExtResource("9_b26j0")]
+[node name="Bow_apollo" parent="." unique_id=316759526 groups=["Weapons"] instance=ExtResource("9_b26j0")]
 process_mode = 4
 position = Vector2(-38, 10)
 
-[node name="poseidon_trident" parent="." unique_id=579671191 instance=ExtResource("10_n7ghd")]
+[node name="poseidon_trident" parent="." unique_id=579671191 groups=["Weapons"] instance=ExtResource("10_n7ghd")]
 process_mode = 4
 
-[node name="shield_achilles" parent="." unique_id=1759438715 instance=ExtResource("11_nvl01")]
+[node name="shield_achilles" parent="." unique_id=1759438715 groups=["Weapons"] instance=ExtResource("11_nvl01")]
 process_mode = 4
 position = Vector2(295, -92)

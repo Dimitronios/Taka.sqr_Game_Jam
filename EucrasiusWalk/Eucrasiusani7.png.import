@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ov0tt1kqxosp"
-path="res://.godot/imported/Eucrasius2.png-f51974ed49b0207ab967d57ebcfac2b0.ctex"
+uid="uid://bb8ag7b31ddj5"
+path="res://.godot/imported/Eucrasiusani7.png-2450b1942b784932d9e8f723b79ea170.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Eucrasius2.png"
-dest_files=["res://.godot/imported/Eucrasius2.png-f51974ed49b0207ab967d57ebcfac2b0.ctex"]
+source_file="res://EucrasiusWalk/Eucrasiusani7.png"
+dest_files=["res://.godot/imported/Eucrasiusani7.png-2450b1942b784932d9e8f723b79ea170.ctex"]
 
 [params]
 
