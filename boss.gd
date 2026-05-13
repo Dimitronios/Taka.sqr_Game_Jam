@@ -1,12 +1,10 @@
 extends CharacterBody2D
 
-# --- SIGNALS ---
 signal health_changed(current_hp, max_hp)
 
-# --- PRELOADS ---
+
 const GRAPE_BULLET = preload("res://grape_bullet.tscn")
 const NOVA_BULLET = preload("res://nova_bullet.tscn")
-# Ensure this path matches the name of your victory scene!
 const VICTORY_SCREEN = preload("res://victory_screen.tscn") 
 
 @export_group("Visuals")
@@ -15,11 +13,10 @@ const VICTORY_SCREEN = preload("res://victory_screen.tscn")
 @export var nova_sprite: Texture2D
 
 @export_group("Stats")
-@export var max_health: int = 200 
+@export var max_health: int = 300 
 @onready var current_health: int = max_health
 @export var stinger_pause: float = 1.0 
 
-# --- ATTACK TRACKING ---
 var current_phase: int = 1
 var nova_stage: int = 0 
 var homing_triggered_75: bool = false
@@ -29,7 +26,6 @@ var homing_triggered_25: bool = false
 var base_speed: float = 120.0 
 var is_attacking: bool = false
 
-# --- NODES ---
 @onready var player = get_node("/root/BossLevel/Player")
 @onready var shooting_point = $ShootingPoint
 @onready var dash_hitbox = $DashHitbox 
@@ -53,7 +49,6 @@ func _physics_process(delta):
 			velocity = direction * base_speed
 			move_and_slide()
 
-# --- BASIC ATTACK ---
 func shoot_grape():
 	if player == null or is_attacking:
 		return
@@ -67,7 +62,6 @@ func shoot_grape():
 func _on_basic_attack_timer_timeout():
 	shoot_grape()
 
-# --- STINGER / DASH ATTACK ---
 func trigger_stinger_combo():
 	is_attacking = true
 	$Sprite2D.texture = homing_sprite 
@@ -91,7 +85,6 @@ func trigger_stinger_combo():
 	dash_hitbox.monitoring = false 
 	is_attacking = false
 
-# --- HEALTH & PHASES ---
 func take_damage(amount: int):
 	current_health -= amount
 	health_changed.emit(current_health, max_health) 
@@ -117,7 +110,6 @@ func check_triggers(hp_percent: float):
 	elif hp_percent <= 25.0 and hp_percent > 0.0 and nova_stage == 3:
 		fire_nova(4); nova_stage = 4
 
-# --- BULLET NOVA ---
 func fire_nova(wave_count: int):
 	is_attacking = true
 	$Sprite2D.texture = nova_sprite
@@ -135,16 +127,12 @@ func fire_nova(wave_count: int):
 	$Sprite2D.texture = default_sprite
 	is_attacking = false
 
-# --- DEATH & VICTORY ---
 func die():
-	# 1. Stop the game
 	get_tree().paused = true
 	
-	# 2. Show the victory screen
 	var victory = VICTORY_SCREEN.instantiate()
 	get_tree().root.add_child(victory)
 	
-	# 3. Clean up the boss
 	queue_free()
 
 func _on_dash_hitbox_body_entered(body):

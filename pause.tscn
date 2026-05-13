@@ -24,6 +24,7 @@ offset_bottom = 1074.0
 script = ExtResource("1_bwtow")
 
 [node name="ColorRect" type="ColorRect" parent="PauseMenu" unique_id=1228563341]
+process_mode = 3
 material = SubResource("ShaderMaterial_bwtow")
 layout_mode = 0
 offset_left = -2.0

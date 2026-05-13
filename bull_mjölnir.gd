@@ -4,12 +4,18 @@ var damage: int = 1
 var travelled_distance = 0
 var returning = false
 
+func _ready():
+	body_entered.connect(_on_body_entered)  # Σύνδεση signal
+
 func _physics_process(delta):
 	const SPEED = 950
 	const RANGE = 600
 	var player = get_tree().get_first_node_in_group("player")
-	print(player)
-	
+
+	if not is_instance_valid(player):
+		queue_free()
+		return
+
 	if not returning:
 		position += Vector2.RIGHT.rotated(rotation) * SPEED * delta
 		travelled_distance += SPEED * delta
@@ -30,5 +36,9 @@ func shoot_lightning():
 		get_tree().root.add_child(bolt)
 
 func _on_body_entered(body):
+	if body.is_in_group("player"):
+		return
 	if body.has_method("take_damage"):
 		body.take_damage(damage)
+	shoot_lightning()  
+	queue_free()

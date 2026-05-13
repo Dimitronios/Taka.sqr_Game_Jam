@@ -5,6 +5,7 @@ var target = null
 const SPEED = 800
 
 func _ready():
+	body_entered.connect(_on_body_entered)  # Σύνδεση signal
 	find_target()
 
 func find_target():
@@ -12,8 +13,7 @@ func find_target():
 	if enemies.is_empty():
 		queue_free()
 		return
-	
-	# Βρες τον πιο κοντινό εχθρό
+
 	var closest = null
 	var closest_dist = INF
 	for enemy in enemies:
@@ -21,21 +21,21 @@ func find_target():
 		if dist < closest_dist:
 			closest_dist = dist
 			closest = enemy
-	
+
 	target = closest
 
 func _physics_process(delta):
-	# Αν ο target πέθανε βρες νέο
 	if not is_instance_valid(target):
 		find_target()
 		return
-	
-	# Ακολουθεί τον εχθρό
+
 	var direction = (target.global_position - global_position).normalized()
 	global_position += direction * SPEED * delta
 	rotation = direction.angle()
 
 func _on_body_entered(body):
+	if body.is_in_group("player"):  # 👈 Αγνοεί τον player
+		return
 	if body.has_method("take_damage"):
 		body.take_damage(damage)
-		queue_free()
+	queue_free()

@@ -5,10 +5,10 @@ var target = null
 var can_seek = false
 const SPEED = 800
 
-
-	
-
 func _ready():
+	body_entered.connect(_on_body_entered)  # Σύνδεση signal
+
+	# Disable collision για να μην χτυπήσει τον player κατά το spawn
 	$CollisionShape2D.disabled = true
 	await get_tree().create_timer(0.1).timeout
 	$CollisionShape2D.disabled = false
@@ -36,18 +36,20 @@ func _physics_process(delta):
 	if not can_seek:
 		global_position += Vector2.RIGHT.rotated(rotation) * SPEED * delta
 		return
-	
+
 	if not is_instance_valid(target):
 		find_target()
 		if not is_instance_valid(target):
 			queue_free()
 			return
-	
+
 	var direction = (target.global_position - global_position).normalized()
 	global_position += direction * SPEED * delta
 	rotation = direction.angle()
 
 func _on_body_entered(body):
+	if body.is_in_group("player"):  # 👈 Αγνοεί τον player
+		return
 	if body.has_method("take_damage"):
 		body.take_damage(damage)
 	queue_free()

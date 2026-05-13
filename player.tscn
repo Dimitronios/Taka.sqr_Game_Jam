@@ -22,7 +22,6 @@ size = Vector2(84, 54)
 bg_color = Color(0.623529, 0.866667, 0.317647, 1)
 
 [node name="Player" type="CharacterBody2D" unique_id=1546396198 groups=["player"]]
-collision_mask = 2
 motion_mode = 1
 script = ExtResource("1_73bic")
 max_health = 40
@@ -64,8 +63,6 @@ visible = false
 collision_layer = 1
 
 [node name="Mjölnir" parent="." unique_id=765171718 instance=ExtResource("5_sweqy")]
-process_mode = 4
-visible = false
 
 [node name="Pashupatastra" parent="." unique_id=3703033 instance=ExtResource("6_2hs0m")]
 process_mode = 4

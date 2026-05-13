@@ -18,6 +18,7 @@ bg_color = Color(0.8881327, 0, 0.13495994, 1)
 [node name="Boss" parent="." unique_id=1063840542 instance=ExtResource("3_qnpvs")]
 unique_name_in_owner = true
 position = Vector2(-69, -857)
+motion_mode = 1
 
 [node name="Background" type="Sprite2D" parent="." unique_id=1278085398]
 z_index = -1
