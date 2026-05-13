@@ -1,0 +1,119 @@
+[gd_scene format=3 uid="uid://dxbq6ymai6oav"]
+
+[ext_resource type="Script" uid="uid://oc1u080xh3vt" path="res://minotaur.gd" id="1_5vxpa"]
+[ext_resource type="Texture2D" uid="uid://6j3yh6hhji7h" path="res://enemies stuff/minowalk.png" id="2_5vxpa"]
+[ext_resource type="Script" uid="uid://cof8l2x32v6x2" path="res://minowalk.gd" id="3_5vxpa"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_15rt5"]
+atlas = ExtResource("2_5vxpa")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u2y4b"]
+atlas = ExtResource("2_5vxpa")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_15340"]
+atlas = ExtResource("2_5vxpa")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mh2nu"]
+atlas = ExtResource("2_5vxpa")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aet02"]
+atlas = ExtResource("2_5vxpa")
+region = Rect2(512, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aftfu"]
+atlas = ExtResource("2_5vxpa")
+region = Rect2(640, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gr6kd"]
+atlas = ExtResource("2_5vxpa")
+region = Rect2(768, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t8pgr"]
+atlas = ExtResource("2_5vxpa")
+region = Rect2(896, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lbh40"]
+atlas = ExtResource("2_5vxpa")
+region = Rect2(1024, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q6ea8"]
+atlas = ExtResource("2_5vxpa")
+region = Rect2(1152, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c8hij"]
+atlas = ExtResource("2_5vxpa")
+region = Rect2(1280, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rohsc"]
+atlas = ExtResource("2_5vxpa")
+region = Rect2(1408, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_34q1w"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_15rt5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u2y4b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_15340")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mh2nu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aet02")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aftfu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gr6kd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t8pgr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lbh40")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q6ea8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c8hij")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rohsc")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 11.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ypitm"]
+radius = 37.054016
+
+[node name="Minotaur" type="CharacterBody2D" unique_id=1758012314 groups=["enemies1"]]
+collision_layer = 2
+collision_mask = 3
+motion_mode = 1
+script = ExtResource("1_5vxpa")
+
+[node name="minowalk" type="AnimatedSprite2D" parent="." unique_id=1922892071]
+position = Vector2(19.375021, -167)
+scale = Vector2(2.7441401, 2.6250002)
+sprite_frames = SubResource("SpriteFrames_34q1w")
+animation = &"walk"
+frame_progress = 0.85243726
+script = ExtResource("3_5vxpa")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=469449182]
+position = Vector2(32, -170)
+shape = SubResource("CircleShape2D_ypitm")
+debug_color = Color(0.701961, 0.282353, 0.352941, 0.419608)

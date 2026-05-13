@@ -1,11 +1,10 @@
 [gd_scene format=3 uid="uid://c5cwymacpy7hs"]
 
-[ext_resource type="Script" uid="uid://owu0c6c8fvf2" path="res://MainMenu.gd" id="1_06t4h"]
+[ext_resource type="Script" path="res://MainMenu.gd" id="1_06t4h"]
 [ext_resource type="Texture2D" uid="uid://dfa3tso5piv6c" path="res://Large Buttons/Large Buttons/New game Button.png" id="2_glbon"]
 [ext_resource type="Texture2D" uid="uid://ddvlcie0rj8sp" path="res://Large Buttons/Colored Large Buttons/New Game  col_Button.png" id="3_nlkkf"]
 [ext_resource type="Texture2D" uid="uid://dyn6ghvhdwtfm" path="res://Large Buttons/Large Buttons/Quit Button.png" id="4_qe12f"]
 [ext_resource type="Texture2D" uid="uid://dq28l4hkkra4s" path="res://Large Buttons/Colored Large Buttons/Quit  col_Button.png" id="5_8qtwp"]
-[ext_resource type="Texture2D" uid="uid://di68bgl6piqf4" path="res://alcohol is free logo.png" id="6_nlkkf"]
 
 [node name="Main Menu" type="Node2D" unique_id=1365875483]
 
@@ -40,11 +39,6 @@ offset_right = 1240.0
 offset_bottom = 907.0
 texture_normal = ExtResource("4_qe12f")
 texture_hover = ExtResource("5_8qtwp")
-
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1578807016]
-position = Vector2(909, 224.00002)
-scale = Vector2(0.32133332, 0.32133332)
-texture = ExtResource("6_nlkkf")
 
 [connection signal="pressed" from="Control/Start" to="Control/Start" method="_on_pressed"]
 [connection signal="pressed" from="Control/Quit" to="Control/Start" method="_on_quit_pressed"]

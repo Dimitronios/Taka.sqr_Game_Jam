@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://cre5tg84nkbwe"]
+[gd_scene format=3 uid="uid://clnlufxgij87o"]
 
 [ext_resource type="Script" uid="uid://dfjept35dvmqd" path="res://bull_pashupatastra.gd" id="1_hrsf4"]
 [ext_resource type="Texture2D" uid="uid://wldw0soca7da" path="res://weaponstuff/1_22.png" id="2_hrsf4"]
@@ -9,8 +9,8 @@ height = 456.0078
 
 [node name="bull_pashupatastra" type="Area2D" unique_id=336674534]
 top_level = true
-collision_layer = 0
-collision_mask = 3
+collision_layer = 4
+collision_mask = 2
 monitorable = false
 script = ExtResource("1_hrsf4")
 

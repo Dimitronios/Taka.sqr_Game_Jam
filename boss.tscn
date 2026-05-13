@@ -6,17 +6,13 @@
 [ext_resource type="Texture2D" uid="uid://bq3viq52pj0vj" path="res://dionysus3.png" id="4_o1i15"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6xxrv"]
-size = Vector2(510, 686)
+size = Vector2(510, 710)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_skx2t"]
 radius = 247.0
-height = 636.0
+height = 716.0
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_lnbgr"]
-size = Vector2(614, 586)
-
-[node name="Boss" type="CharacterBody2D" unique_id=1063840542 groups=["enemies"]]
-collision_layer = 2
+[node name="Boss" type="CharacterBody2D" unique_id=1063840542]
 script = ExtResource("1_6xxrv")
 default_sprite = ExtResource("1_0bnu1")
 homing_sprite = ExtResource("3_lnbgr")
@@ -35,21 +31,3 @@ debug_color = Color(0.9999718, 0.45489955, 0.440695, 0.41960785)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1375006837]
 position = Vector2(5, 25)
 shape = SubResource("CapsuleShape2D_skx2t")
-
-[node name="BasicAttackTimer" type="Timer" parent="." unique_id=1715455103]
-autostart = true
-
-[node name="ShootingPoint" type="Marker2D" parent="." unique_id=970956174]
-position = Vector2(-250, -77)
-gizmo_extents = 168.9
-
-[node name="DashHitbox" type="Area2D" parent="." unique_id=1175883701]
-visible = false
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="DashHitbox" unique_id=270637886]
-position = Vector2(-66, 21)
-shape = SubResource("RectangleShape2D_lnbgr")
-debug_color = Color(0.96645135, 0.18056235, 0.10234592, 0.41960785)
-
-[connection signal="timeout" from="BasicAttackTimer" to="." method="_on_basic_attack_timer_timeout"]
-[connection signal="body_entered" from="DashHitbox" to="." method="_on_dash_hitbox_body_entered"]

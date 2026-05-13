@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://ccf80uiykqbrp"]
+
+[ext_resource type="Script" uid="uid://cci4u4xm6pymk" path="res://kusanagi.gd" id="1_51ud8"]
+[ext_resource type="Texture2D" uid="uid://lf0olokiw2ca" path="res://32x32_PixelWeapons_Free.png" id="2_fy770"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_nthgb"]
+radius = 426.78568
+
+[node name="kusanagi" type="Area2D" unique_id=941152522]
+rotation = 0.09685443
+collision_layer = 0
+collision_mask = 2
+monitorable = false
+script = ExtResource("1_51ud8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=610048026]
+position = Vector2(-77.327896, -30.665874)
+shape = SubResource("CircleShape2D_nthgb")
+
+[node name="WeaponPivot" type="Marker2D" parent="." unique_id=1495600283]
+position = Vector2(-53.275257, -20.94629)
+gizmo_extents = 47.7
+
+[node name="Timer" type="Timer" parent="." unique_id=633816227]
+wait_time = 0.352
+autostart = true
+
+[node name="32x32PixelWeaponsFree" type="Sprite2D" parent="." unique_id=1158328544]
+position = Vector2(-87.90242, -42.09184)
+rotation = -0.09065501
+scale = Vector2(3.7189476, 3.478979)
+texture = ExtResource("2_fy770")
+flip_h = true
+region_enabled = true
+region_rect = Rect2(0.4680786, 257.84006, 28.562393, 29.18332)
+
+[node name="ShootingPoint" type="Marker2D" parent="32x32PixelWeaponsFree" unique_id=1993003497]
+unique_name_in_owner = true
+show_behind_parent = true
+position = Vector2(-4.0797973, -3.6808739)
+rotation = -0.055623345
+gizmo_extents = 30.6
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

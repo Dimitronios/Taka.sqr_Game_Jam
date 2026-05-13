@@ -6,7 +6,7 @@ extends Area2D
 var charge_time = 0.0
 var is_charging = false
 var can_shoot = true
-const MAX_CHARGE = 2.0
+const MAX_CHARGE = 3.0
 const COOLDOWN = 1
 
 func _process(delta):

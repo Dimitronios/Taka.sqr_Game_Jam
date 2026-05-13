@@ -1,0 +1,118 @@
+[gd_scene format=3 uid="uid://bqenhinnemt5i"]
+
+[ext_resource type="Script" uid="uid://t2tafwl4ao3u" path="res://satyr.gd" id="1_o3tst"]
+[ext_resource type="Script" uid="uid://gmn7w0450iio" path="res://satyrwalk.gd" id="2_8h24i"]
+[ext_resource type="Texture2D" uid="uid://cq65xd3gtk1w4" path="res://enemies stuff/satyrwalk.png" id="2_o3tst"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_itla0"]
+atlas = ExtResource("2_o3tst")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8h24i"]
+atlas = ExtResource("2_o3tst")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tk28x"]
+atlas = ExtResource("2_o3tst")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0hkpl"]
+atlas = ExtResource("2_o3tst")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rwbpy"]
+atlas = ExtResource("2_o3tst")
+region = Rect2(512, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fftp4"]
+atlas = ExtResource("2_o3tst")
+region = Rect2(640, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hqa30"]
+atlas = ExtResource("2_o3tst")
+region = Rect2(768, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4d73w"]
+atlas = ExtResource("2_o3tst")
+region = Rect2(896, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u7n3y"]
+atlas = ExtResource("2_o3tst")
+region = Rect2(1024, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lh5ie"]
+atlas = ExtResource("2_o3tst")
+region = Rect2(1152, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kx2v3"]
+atlas = ExtResource("2_o3tst")
+region = Rect2(1280, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_irjmq"]
+atlas = ExtResource("2_o3tst")
+region = Rect2(1408, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_o8iic"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_itla0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8h24i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tk28x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0hkpl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rwbpy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fftp4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hqa30")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4d73w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u7n3y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lh5ie")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kx2v3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_irjmq")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ypitm"]
+radius = 55.226807
+
+[node name="satyr" type="CharacterBody2D" unique_id=1758012314 groups=["enemies"]]
+collision_layer = 2
+collision_mask = 3
+motion_mode = 1
+script = ExtResource("1_o3tst")
+
+[node name="satyrwalk" type="AnimatedSprite2D" parent="." unique_id=449894519]
+position = Vector2(-0.81249046, -105.50001)
+scale = Vector2(2.043945, 1.7265624)
+sprite_frames = SubResource("SpriteFrames_o8iic")
+animation = &"walk"
+script = ExtResource("2_8h24i")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=469449182]
+position = Vector2(-1, -77)
+shape = SubResource("CircleShape2D_ypitm")
+debug_color = Color(0.701961, 0.282353, 0.352941, 0.419608)

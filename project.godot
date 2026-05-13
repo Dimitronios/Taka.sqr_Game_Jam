@@ -74,14 +74,10 @@ Settings/Show_Tooltips=true
 
 [application]
 
-config/name="ALCOHOL IS FREE"
+config/name="Game Jam Taka.sqr Main"
 run/main_scene="uid://c5cwymacpy7hs"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.png"
-
-[autoload]
-
-BackgroundMusic="*uid://dowxnxruag0vk"
 
 [display]
 
@@ -101,7 +97,7 @@ enabled=PackedStringArray("res://addons/colorpicker_presets/plugin.cfg")
 
 player=""
 enemies=""
-Weapons=""
+weapons=""
 
 [input]
 
@@ -137,4 +133,5 @@ move_down={
 
 [rendering]
 
-renderer/rendering_method="mobile"
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"

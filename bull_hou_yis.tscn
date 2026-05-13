@@ -9,8 +9,8 @@ height = 93.99355
 
 [node name="bull_hou_yis" type="Area2D" unique_id=336674534]
 top_level = true
-collision_layer = 0
-collision_mask = 3
+collision_layer = 4
+collision_mask = 2
 monitorable = false
 script = ExtResource("1_y0060")
 

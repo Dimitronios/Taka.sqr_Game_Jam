@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://4lr4406li1de"]
+[gd_scene format=3 uid="uid://d2pxecei460d"]
 
 [ext_resource type="Script" uid="uid://bvvxnmt5fu73o" path="res://bull_poseidon.gd" id="1_8a0n2"]
 [ext_resource type="Texture2D" uid="uid://clr0va5cbqd8f" path="res://weaponstuff/trident staff.png" id="2_8a0n2"]
@@ -8,8 +8,8 @@ radius = 16.03122
 
 [node name="bull_poseidon" type="Area2D" unique_id=336674534]
 top_level = true
-collision_layer = 0
-collision_mask = 3
+collision_layer = 4
+collision_mask = 2
 monitorable = false
 script = ExtResource("1_8a0n2")
 

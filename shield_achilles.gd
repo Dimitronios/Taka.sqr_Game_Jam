@@ -1,6 +1,6 @@
 extends Area2D
 
-var damage: float = 2.5
+var damage: float = 4
 const SPEED = 1.7
 var can_damage = true
 

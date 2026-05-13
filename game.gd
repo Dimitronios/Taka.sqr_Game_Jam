@@ -1,17 +1,26 @@
 extends Node2D
-var pause_scene = preload("res://pause.tscn")
-var pause_menu_instance = null
 
-const MAX_MOBS = 10
+const MAX_MOBS = 12
 
 var mob_count = 0
+
+var mob_scenes = [
+	preload("res://minotaur.tscn"),
+	preload("res://satyr.tscn"),
+	preload("res://medusa.tscn")
+]
 
 func spawn_mob():
 	if mob_count >= MAX_MOBS:
 		return
 	%PathFollow2D.progress_ratio = randf()
-	var new_mob = preload("res://mob.tscn").instantiate()
-	new_mob.global_position = %PathFollow2D.global_position
+	var spawn_pos = %PathFollow2D.global_position
+	spawn_pos.y = 0
+	
+	# Τυχαία επιλογή εχθρού
+	var random_mob = mob_scenes[randi() % mob_scenes.size()]
+	var new_mob = random_mob.instantiate()
+	new_mob.global_position = spawn_pos
 	add_child(new_mob)
 	mob_count += 1
 	new_mob.tree_exited.connect(_on_mob_tree_exited)
@@ -43,16 +52,4 @@ func _process(_delta):
 		var minutes = time_left / 60
 		var seconds = time_left % 60
 		time_label.text = "%02d:%02d" % [minutes, seconds]
-		if Input.is_action_just_pressed("ui_cancel"):
-			toggle_pause()
-func toggle_pause():
-	if get_tree().paused:
-		get_tree().paused = false
-		if pause_menu_instance:
-			pause_menu_instance.queue_free()
-			pause_menu_instance = null
-	else:
-		get_tree().paused = true
-		if pause_menu_instance == null:
-			pause_menu_instance = pause_scene.instantiate()
-			get_tree().root.add_child(pause_menu_instance)
+		

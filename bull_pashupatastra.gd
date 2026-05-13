@@ -1,7 +1,7 @@
 extends Area2D
 
 
-var damage: float = 4
+var damage: float = 8
 var travelled_distance = 0
 
 

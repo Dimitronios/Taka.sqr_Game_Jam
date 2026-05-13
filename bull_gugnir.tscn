@@ -1,15 +1,15 @@
 [gd_scene format=3 uid="uid://cv2y4dgts5lmh"]
 
 [ext_resource type="Script" uid="uid://bx284ccafuv60" path="res://bull_gugnir.gd" id="1_iynd4"]
-[ext_resource type="Texture2D" uid="uid://lf0olokiw2ca" path="res://weaponstuff/32x32_PixelWeapons_Free.png" id="2_gd60j"]
+[ext_resource type="Texture2D" uid="uid://lf0olokiw2ca" path="res://32x32_PixelWeapons_Free.png" id="2_gd60j"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_naqkr"]
 radius = 27.784887
 
 [node name="bull_gugnir" type="Area2D" unique_id=336674534]
 top_level = true
-collision_layer = 0
-collision_mask = 3
+collision_layer = 4
+collision_mask = 2
 monitorable = false
 script = ExtResource("1_iynd4")
 

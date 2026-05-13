@@ -1,7 +1,7 @@
-[gd_scene format=3 uid="uid://61is8inwbp5"]
+[gd_scene format=3 uid="uid://db2ccehd8sjya"]
 
-[ext_resource type="Script" uid="uid://bu7klik8utxdc" path="res://pashupatastra.gd" id="1_bkqm0"]
-[ext_resource type="Texture2D" uid="uid://lf0olokiw2ca" path="res://weaponstuff/32x32_PixelWeapons_Free.png" id="2_87ddt"]
+[ext_resource type="Script" path="res://pashupatastra.gd" id="1_bkqm0"]
+[ext_resource type="Texture2D" uid="uid://lf0olokiw2ca" path="res://32x32_PixelWeapons_Free.png" id="2_87ddt"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_nthgb"]
 radius = 426.78568
@@ -35,7 +35,7 @@ position = Vector2(5.0000005, 3.9384618)
 gizmo_extents = 30.6
 
 [node name="Timer" type="Timer" parent="." unique_id=633816227]
-wait_time = 5.105
+wait_time = 4.0
 autostart = true
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -1,11 +1,10 @@
 extends Area2D
 
-var damage: float = 2
+var damage: float = 2.5
 var target = null
 const SPEED = 800
 
 func _ready():
-	body_entered.connect(_on_body_entered)  # Σύνδεση signal
 	find_target()
 
 func find_target():
@@ -13,7 +12,8 @@ func find_target():
 	if enemies.is_empty():
 		queue_free()
 		return
-
+	
+	# Βρες τον πιο κοντινό εχθρό
 	var closest = null
 	var closest_dist = INF
 	for enemy in enemies:
@@ -21,21 +21,32 @@ func find_target():
 		if dist < closest_dist:
 			closest_dist = dist
 			closest = enemy
-
+	
 	target = closest
 
 func _physics_process(delta):
+	
+	
 	if not is_instance_valid(target):
 		find_target()
+		if not is_instance_valid(target):
+			queue_free()
+			return
+	
+	var distance = global_position.distance_to(target.global_position)
+	
+	# Αν είναι πολύ κοντά κάνει damage και φεύγει
+	if distance < 20:
+		if target.has_method("take_damage"):
+			target.take_damage(damage)
+		queue_free()
 		return
-
+	
 	var direction = (target.global_position - global_position).normalized()
 	global_position += direction * SPEED * delta
 	rotation = direction.angle()
 
 func _on_body_entered(body):
-	if body.is_in_group("player"):  # 👈 Αγνοεί τον player
-		return
 	if body.has_method("take_damage"):
 		body.take_damage(damage)
-	queue_free()
+		queue_free()

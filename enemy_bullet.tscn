@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://0cidrb8c1qqk"]
+
+[ext_resource type="Script" uid="uid://cfxy2prc17woa" path="res://enemy_bullet.gd" id="1_gl7bs"]
+[ext_resource type="Texture2D" uid="uid://d170savpwf41m" path="res://weaponstuff/1_14.png" id="2_gl7bs"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_naqkr"]
+radius = 33.06055
+
+[node name="enemy_bullet" type="Area2D" unique_id=336674534]
+top_level = true
+collision_layer = 8
+monitorable = false
+script = ExtResource("1_gl7bs")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1998346021]
+position = Vector2(-10, -31)
+shape = SubResource("CircleShape2D_naqkr")
+
+[node name="114" type="Sprite2D" parent="." unique_id=551501862]
+position = Vector2(-12, -29.999996)
+scale = Vector2(1.4800001, 2)
+texture = ExtResource("2_gl7bs")
+flip_h = true
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

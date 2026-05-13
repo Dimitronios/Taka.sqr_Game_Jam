@@ -9,6 +9,7 @@ func shoot():
 	const BULLET = preload("res://bull_kusanagi.tscn")
 	var new_bullet = BULLET.instantiate()
 	new_bullet.global_transform = %ShootingPoint.global_transform
+	#new_bullet.damage = player.strength
 	get_tree().root.add_child(new_bullet)
 
 func _on_timer_timeout() -> void:

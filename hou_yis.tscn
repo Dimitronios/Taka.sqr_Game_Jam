@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://c2mcuoyumtw7y"]
 
 [ext_resource type="Script" uid="uid://bqogr0ck6fj3i" path="res://hou_yis.gd" id="1_f1qv0"]
-[ext_resource type="Texture2D" uid="uid://lf0olokiw2ca" path="res://weaponstuff/32x32_PixelWeapons_Free.png" id="2_hnrl8"]
+[ext_resource type="Texture2D" uid="uid://lf0olokiw2ca" path="res://32x32_PixelWeapons_Free.png" id="2_hnrl8"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_nthgb"]
 radius = 426.78568
@@ -36,7 +36,7 @@ position = Vector2(2, -30)
 gizmo_extents = 47.7
 
 [node name="Timer" type="Timer" parent="." unique_id=633816227]
-wait_time = 0.787
+wait_time = 0.7
 autostart = true
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

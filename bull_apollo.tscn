@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://clq41ktc316t5"]
 
-[ext_resource type="Script" path="res://bull_apollo.gd" id="1_ivp2n"]
+[ext_resource type="Script" uid="uid://dgm30pbochp6s" path="res://bull_apollo.gd" id="1_ivp2n"]
 [ext_resource type="Texture2D" uid="uid://daxkoerws6ec4" path="res://weaponstuff/1_27.png" id="2_ivp2n"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_naqkr"]
@@ -8,8 +8,8 @@ radius = 34.0147
 
 [node name="bull_apollo" type="Area2D" unique_id=336674534]
 top_level = true
-collision_layer = 0
-collision_mask = 3
+collision_layer = 4
+collision_mask = 2
 monitorable = false
 script = ExtResource("1_ivp2n")
 

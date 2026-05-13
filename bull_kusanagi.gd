@@ -1,6 +1,6 @@
 extends Area2D
 
-var damage: int = 1
+var damage: int = 1.5
 var travelled_distance = 0
 
 func _ready():

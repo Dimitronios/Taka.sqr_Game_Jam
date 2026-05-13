@@ -1,6 +1,6 @@
 extends Area2D
 
-var damage: float = 1.0
+var damage: float = 1
 var travelled_distance = 0.0
 var charge: float = 0.0
 
@@ -12,7 +12,7 @@ func _ready():
 func _physics_process(delta):
 	var speed = 400 + (charge * 800)
 	var range = 250 + (charge * 600)
-	damage = 1.0 + (charge * 2.0)
+	damage = 2+(charge * 2.0)
 	
 	position += Vector2.RIGHT.rotated(rotation) * speed * delta
 	travelled_distance += speed * delta

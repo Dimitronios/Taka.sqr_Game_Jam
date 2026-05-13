@@ -1,6 +1,6 @@
-[gd_scene format=3 uid="uid://ckq4ijaelft8v"]
+[gd_scene format=3 uid="uid://b8hdwfi20kqv4"]
 
-[ext_resource type="Script" uid="uid://co5to6gr1y0pv" path="res://water_bull.gd" id="1_7vabq"]
+[ext_resource type="Script" path="res://water_bull.gd" id="1_7vabq"]
 [ext_resource type="Texture2D" uid="uid://i0lxg4eqtua8" path="res://weaponstuff/Water Effect and Bullet 16x16.png" id="2_7vabq"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_q41hk"]
@@ -8,8 +8,8 @@ radius = 61.008198
 
 [node name="water_bull" type="Area2D" unique_id=336674534]
 top_level = true
-collision_layer = 2
-collision_mask = 3
+collision_layer = 4
+collision_mask = 2
 monitorable = false
 script = ExtResource("1_7vabq")
 
