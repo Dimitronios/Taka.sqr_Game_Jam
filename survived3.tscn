@@ -1,0 +1,137 @@
+[gd_scene format=3 uid="uid://cgeiliq6ssakx"]
+
+[ext_resource type="Script" uid="uid://cbf1oapd21kao" path="res://WaveCl3.gd" id="1_82y3b"]
+[ext_resource type="Texture2D" uid="uid://gocwkde3klkv" path="res://pasapoustra.png" id="2_82y3b"]
+[ext_resource type="Texture2D" uid="uid://dy5sspcr63v0y" path="res://houyi.png" id="3_uu5co"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_hr01w"]
+font_size = 32
+
+[sub_resource type="LabelSettings" id="LabelSettings_3tkwi"]
+font_size = 64
+
+[sub_resource type="LabelSettings" id="LabelSettings_j67vh"]
+font_size = 24
+
+[sub_resource type="LabelSettings" id="LabelSettings_jpc8y"]
+line_spacing = 0.0
+font_size = 24
+
+[node name="Survived" type="CanvasLayer" unique_id=723585942]
+
+[node name="Control" type="Control" parent="." unique_id=347203776]
+layout_mode = 3
+anchor_right = 0.32760417
+anchor_bottom = 0.35185185
+offset_right = 1276.0
+offset_bottom = 713.0
+script = ExtResource("1_82y3b")
+metadata/_edit_use_anchors_ = true
+
+[node name="Panel" type="Panel" parent="Control" unique_id=1192856414]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 4.0
+offset_top = -7.0
+offset_right = 1919.0
+offset_bottom = 1082.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Wave" type="Label" parent="Control/Panel" unique_id=1482656786]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5234987
+anchor_top = 0.34848484
+anchor_right = 0.51618797
+anchor_bottom = 0.34848484
+offset_left = -78.5
+offset_top = -314.5
+offset_right = 171.5
+offset_bottom = -257.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Wave cleared"
+label_settings = SubResource("LabelSettings_hr01w")
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Weapon" type="Label" parent="Control/Panel" unique_id=541330955]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.14046997
+anchor_top = 0.04775023
+anchor_right = 0.14046997
+anchor_bottom = 0.04775023
+offset_left = 417.0
+offset_top = 114.0
+offset_right = 984.0
+offset_bottom = 236.0
+text = "Choose a weapon "
+label_settings = SubResource("LabelSettings_3tkwi")
+metadata/_edit_use_anchors_ = true
+
+[node name="Choise1" type="TextureButton" parent="Control/Panel" unique_id=1104698061]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.07885118
+anchor_top = 0.0661157
+anchor_right = 0.14360313
+anchor_bottom = 0.21579431
+offset_left = 377.0
+offset_top = 262.0
+offset_right = 509.0
+offset_bottom = 355.0
+texture_normal = ExtResource("2_82y3b")
+metadata/_edit_use_anchors_ = true
+
+[node name="choise2" type="TextureButton" parent="Control/Panel" unique_id=1462153083]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 1089.0
+offset_top = 334.0
+offset_right = 1345.0
+offset_bottom = 590.0
+texture_normal = ExtResource("3_uu5co")
+metadata/_edit_use_anchors_ = true
+
+[node name="Description1" type="Label" parent="Control/Panel" unique_id=385935241]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.15039164
+anchor_top = 0.15886134
+anchor_right = 0.16605744
+anchor_bottom = 0.14141414
+offset_left = 691.0
+offset_top = 417.0
+offset_right = 1162.0
+offset_bottom = 621.0
+text = "-Hou Yi's Bow
+The bow that once shot down nine suns. 
+Draw it long enough 
+and feel its solar fury."
+label_settings = SubResource("LabelSettings_j67vh")
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Description2" type="Label" parent="Control/Panel" unique_id=168433056]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0845953
+anchor_top = 0.16161616
+anchor_right = 0.0845953
+anchor_bottom = 0.16161616
+offset_left = 232.0
+offset_top = 420.0
+offset_right = 664.0
+offset_bottom = 563.0
+text = "	-Pashupatastra
+The devastating weapon of Shiva,
+ unleashing a burst of energy in all directions 
+at once."
+label_settings = SubResource("LabelSettings_jpc8y")
+horizontal_alignment = 1
+vertical_alignment = 3
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="Control/Panel/Choise1" to="Control" method="_on_choise_1_pressed"]
+[connection signal="pressed" from="Control/Panel/choise2" to="Control" method="_on_choise_2_pressed"]
