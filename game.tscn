@@ -3,7 +3,6 @@
 [ext_resource type="Script" uid="uid://dsgxioo8wstff" path="res://game.gd" id="1_fc0e3"]
 [ext_resource type="PackedScene" uid="uid://dwrgl1ygwlqyn" path="res://pause.tscn" id="2_7jktm"]
 [ext_resource type="PackedScene" uid="uid://dsw8raqgacxsc" path="res://player.tscn" id="3_ryrav"]
-[ext_resource type="Texture2D" uid="uid://c08o0d810baou" path="res://j6ZVIW.png" id="4_fc0e3"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_7jktm"]
 
@@ -39,7 +38,6 @@ autostart = true
 [node name="Background" type="Sprite2D" parent="." unique_id=2026518299]
 position = Vector2(16, -26)
 scale = Vector2(3.9592009, 2.952948)
-texture = ExtResource("4_fc0e3")
 
 [node name="ArenaBorders" type="StaticBody2D" parent="." unique_id=1805192637]
 physics_material_override = SubResource("PhysicsMaterial_7jktm")
