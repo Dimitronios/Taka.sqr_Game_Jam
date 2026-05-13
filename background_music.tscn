@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://dowxnxruag0vk"]
+
+[ext_resource type="AudioStream" uid="uid://bh28raly7at4g" path="res://walking with the breeze.ogg" id="1_4m5bw"]
+
+[node name="BackgroundMusic" type="AudioStreamPlayer" unique_id=1501458344]
+stream = ExtResource("1_4m5bw")
+volume_db = -19.158
+autoplay = true

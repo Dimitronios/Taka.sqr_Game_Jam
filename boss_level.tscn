@@ -1,85 +1,168 @@
 [gd_scene format=3 uid="uid://dd4mt5bym13a1"]
 
-[ext_resource type="Texture2D" uid="uid://q5tuijwqsnc2" path="res://background.png" id="1_8bepo"]
-[ext_resource type="Script" uid="uid://c2avlvfr0vm" path="res://boss_level.gd" id="1_313d6"]
-[ext_resource type="PackedScene" uid="uid://dsw8raqgacxsc" path="res://player.tscn" id="2_1nchv"]
-[ext_resource type="PackedScene" uid="uid://blgs24bt5b4qk" path="res://boss.tscn" id="3_qnpvs"]
-[ext_resource type="Texture2D" uid="uid://p0ps7pqea1ig" path="res://Pixelart arrow icon pack 1.0.png" id="4_qnpvs"]
-[ext_resource type="Script" uid="uid://cqnfrol613wj5" path="res://boss_pointer.gd" id="5_sj36s"]
-[ext_resource type="Script" uid="uid://b0rkpbwarwuux" path="res://boss_ui.gd" id="6_sj36s"]
+[ext_resource type="Script" uid="uid://cquaf5ii5prb4" path="res://WaveCl2.gd" id="1_1nchv"]
+[ext_resource type="Texture2D" uid="uid://crynfsqlvlqkl" path="res://trident.png" id="1_8bepo"]
+[ext_resource type="Texture2D" uid="uid://c3yvqeby1rhhy" path="res://weaponstuff/thor.png" id="2_1nchv"]
+[ext_resource type="Texture2D" uid="uid://4306a7etk6a3" path="res://weaponstuff/akollonas.png" id="3_qnpvs"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qnpvs"]
-bg_color = Color(0, 0, 0, 1)
+[sub_resource type="LabelSettings" id="LabelSettings_hr01w"]
+font_size = 32
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sj36s"]
-bg_color = Color(0.8881327, 0, 0.13495994, 1)
+[sub_resource type="LabelSettings" id="LabelSettings_3tkwi"]
+font_size = 64
 
-[node name="BossLevel" type="Node2D" unique_id=1398474745]
-script = ExtResource("1_313d6")
+[sub_resource type="LabelSettings" id="LabelSettings_j67vh"]
+font_size = 24
 
-[node name="Boss" parent="." unique_id=1063840542 instance=ExtResource("3_qnpvs")]
-unique_name_in_owner = true
-position = Vector2(-69, -857)
-motion_mode = 1
+[sub_resource type="LabelSettings" id="LabelSettings_jpc8y"]
+line_spacing = 0.0
+font_size = 24
 
-[node name="Background" type="Sprite2D" parent="." unique_id=1278085398]
-z_index = -1
-position = Vector2(-28.427902, -152.99991)
-scale = Vector2(2.0580351, 2.6350627)
-texture = ExtResource("1_8bepo")
+[sub_resource type="LabelSettings" id="LabelSettings_7bkf7"]
+font_size = 24
 
-[node name="ArenaBorders" type="StaticBody2D" parent="." unique_id=1348249031]
+[node name="Survived" type="CanvasLayer" unique_id=723585942]
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ArenaBorders" unique_id=1232317759]
-build_mode = 1
-polygon = PackedVector2Array(-1525, -694, -1622, -540, -1701, -389, -1755, -189, -1755, 200, -1726, 571, -1588, 814, -1296, 1027, -999, 1064, -644, 1077, -477, 1098, -464, 1006, -385, 985, -302, 1010, -302, 1052, 229, 1064, 242, 985, 400, 981, 413, 1073, 960, 1093, 1252, 1027, 1407, 918, 1541, 759, 1678, 534, 1687, 354, 1708, 87, 1683, -168, 1549, -506, 1470, -728, 1315, -811, 1064, -953, 693, -1029, 304, -1045, -460, -1041, -820, -1024, -1166, -907)
-
-[node name="Player" parent="." unique_id=1546396198 instance=ExtResource("2_1nchv")]
-
-[node name="Camera2D" type="Camera2D" parent="." unique_id=1631433693]
-
-[node name="UI" type="CanvasLayer" parent="." unique_id=1691923709]
-
-[node name="BossPointer" type="Sprite2D" parent="UI" unique_id=592501201]
-texture = ExtResource("4_qnpvs")
-script = ExtResource("5_sj36s")
-
-[node name="BossUI" type="CanvasLayer" parent="." unique_id=786987040]
-script = ExtResource("6_sj36s")
-
-[node name="BossHealthBar" type="ProgressBar" parent="BossUI" unique_id=781137618]
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -250.0
-offset_top = -27.0
-offset_right = 250.0
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_styles/background = SubResource("StyleBoxFlat_qnpvs")
-theme_override_styles/fill = SubResource("StyleBoxFlat_sj36s")
-max_value = 200.0
-step = 1.0
+[node name="Control" type="Control" parent="." unique_id=347203776]
+layout_mode = 3
+anchor_right = 0.33645833
+anchor_bottom = 0.34907407
+offset_right = 1276.0
+offset_bottom = 713.0
+script = ExtResource("1_1nchv")
 metadata/_edit_use_anchors_ = true
 
-[node name="HPLabel" type="Label" parent="BossUI/BossHealthBar" unique_id=527665129]
+[node name="Panel" type="Panel" parent="Control" unique_id=1192856414]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.010926119
+anchor_top = 0.014678899
+anchor_right = 0.010926119
+anchor_bottom = 0.014678899
+offset_left = 4.0
+offset_top = -7.0
+offset_right = 1908.0
+offset_bottom = 1063.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Wave" type="Label" parent="Control/Panel" unique_id=1482656786]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 786.0
+offset_top = 49.0
+offset_right = 1036.5
+offset_bottom = 106.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Wave cleared"
+label_settings = SubResource("LabelSettings_hr01w")
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Weapon" type="Label" parent="Control/Panel" unique_id=541330955]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.120273106
+anchor_top = 0.019626169
+anchor_right = 0.120273106
+anchor_bottom = 0.019626169
+offset_left = 417.0
+offset_top = 114.0
+offset_right = 984.0
+offset_bottom = 236.0
+text = "Choose a weapon "
+label_settings = SubResource("LabelSettings_3tkwi")
+metadata/_edit_use_anchors_ = true
+
+[node name="Choise1" type="TextureButton" parent="Control/Panel" unique_id=1104698061]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.06144958
+anchor_top = 0.08037383
+anchor_right = 0.0036764706
+anchor_bottom = 0.23271029
+offset_left = 377.0
+offset_top = 262.0
+offset_right = 509.0
+offset_bottom = 355.0
+texture_normal = ExtResource("1_8bepo")
+metadata/_edit_use_anchors_ = true
+
+[node name="choise2" type="TextureButton" parent="Control/Panel" unique_id=1462153083]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.04621849
+anchor_top = 0.11401869
+anchor_right = 0.020483194
+anchor_bottom = 0.14392523
+offset_left = 854.0
+offset_top = 247.0
+offset_right = 983.0
+offset_bottom = 375.0
+texture_normal = ExtResource("2_1nchv")
+metadata/_edit_use_anchors_ = true
+
+[node name="choise3" type="TextureButton" parent="Control/Panel" unique_id=2104184405]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
+offset_left = 1295.0
+offset_top = 385.0
+offset_right = 1551.0
+offset_bottom = 545.0
+texture_normal = ExtResource("3_qnpvs")
 
-[node name="BossName" type="Label" parent="BossUI" unique_id=295425397]
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -99.0
-offset_top = -52.0
-offset_right = 99.0
-offset_bottom = -29.0
-grow_horizontal = 2
-grow_vertical = 0
-text = "DIONYSUS, GOF OF WINE"
+[node name="Description1" type="Label" parent="Control/Panel" unique_id=385935241]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.019432774
+anchor_top = 0.16261682
+anchor_right = -0.019432774
+anchor_bottom = 0.16261682
+offset_left = 691.0
+offset_top = 417.0
+offset_right = 1162.0
+offset_bottom = 621.0
+text = "-Mjölnir 
+Thor's mighty hammer 
+that always finds its way home
+— and brings a storm of lightning with it."
+label_settings = SubResource("LabelSettings_j67vh")
+horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
+
+[node name="Description2" type="Label" parent="Control/Panel" unique_id=168433056]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.05357143
+anchor_top = 0.17009346
+anchor_right = -0.05357143
+anchor_bottom = 0.17009346
+offset_left = 232.0
+offset_top = 420.0
+offset_right = 664.0
+offset_bottom = 563.0
+text = "-Poseidon's Trident
+Hurled across the battlefield, 
+it stays on the on the ground
+  leaving a wave of destruction in its wake."
+label_settings = SubResource("LabelSettings_jpc8y")
+horizontal_alignment = 1
+vertical_alignment = 3
+metadata/_edit_use_anchors_ = true
+
+[node name="Description3" type="Label" parent="Control/Panel" unique_id=540273945]
+layout_mode = 0
+offset_left = 1202.0
+offset_top = 580.0
+offset_right = 1631.0
+offset_bottom = 828.0
+text = "-Apollo's Bow
+Four divine arrows
+ that seek out enemies on their own, 
+blessed by the god of light himself.
+"
+label_settings = SubResource("LabelSettings_7bkf7")
+horizontal_alignment = 1
+
+[connection signal="pressed" from="Control/Panel/Choise1" to="Control" method="_on_choise_1_pressed"]
+[connection signal="pressed" from="Control/Panel/choise2" to="Control" method="_on_choise_2_pressed"]
+[connection signal="pressed" from="Control/Panel/choise3" to="Control" method="_on_choise_3_pressed"]

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://qmqpm6asge1i"
-path="res://.godot/imported/square_upper_leg.png-e1f848aab7dd8805f40f881c2160a53d.ctex"
+uid="uid://dt6aht8y1yu7v"
+path="res://.godot/imported/eucrasius.png-14bde2fabb04bef5fd4e6d2f5b0da387.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://characters/happy_boo/square_upper_leg.png"
-dest_files=["res://.godot/imported/square_upper_leg.png-e1f848aab7dd8805f40f881c2160a53d.ctex"]
+source_file="res://eucrasius.png"
+dest_files=["res://.godot/imported/eucrasius.png-14bde2fabb04bef5fd4e6d2f5b0da387.ctex"]
 
 [params]
 

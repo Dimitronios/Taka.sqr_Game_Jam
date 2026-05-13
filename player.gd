@@ -19,10 +19,6 @@ func _physics_process(delta):
 	velocity = direction * speed
 	move_and_slide()
 
-	if velocity.length() > 0.0:
-		%HappyBoo.play_walk_animation()
-	else:
-		%HappyBoo.play_idle_animation()
 
 	if damage_cooldown > 0.0:
 		damage_cooldown -= delta

@@ -11,35 +11,45 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if flag == true:
-		get_tree().change_scene_to_file("res://boss_level.tscn")
-
+		get_node("/root/survivors_game.tscn").start_new_round()
 func _on_choise_1_pressed() -> void:
-
-	var Pashupatastra = get_Pashupatastra()
-	if Pashupatastra:
-		Pashupatastra.visible = true
-		Pashupatastra.process_mode = Node.PROCESS_MODE_ALWAYS
+	var poseidon_trident = get_poseidon_trident()
+	if poseidon_trident:
+		poseidon_trident.visible = true
+		poseidon_trident.process_mode = Node.PROCESS_MODE_ALWAYS
 	get_tree().paused = false
 	flag = true
-
 
 func _on_choise_2_pressed() -> void:
-	var Hou_Yis = get_Hou_Yis()
-	if Hou_Yis:
-		Hou_Yis.visible = true
-		Hou_Yis.process_mode = Node.PROCESS_MODE_ALWAYS
+	var Mjölnir = get_Mjölnir()
+	if Mjölnir:
+		Mjölnir.visible = true
+		Mjölnir.process_mode = Node.PROCESS_MODE_ALWAYS
 	get_tree().paused = false
 	flag = true
 
-func get_Hou_Yis():
+func _on_choise_3_pressed() -> void:
+	var Bow_apollo = get_Bow_apollo()
+	if Bow_apollo:
+		Bow_apollo.visible = true
+		Bow_apollo.process_mode = Node.PROCESS_MODE_ALWAYS
+	get_tree().paused = false
+	flag = true
+
+func get_poseidon_trident():
 	for weapon in weapons:
-		if weapon.name == "Hou_Yis":
+		if weapon.name == "poseidon_trident":
 			return weapon
 	return null
 
-func get_Pashupatastra():
+func get_Bow_apollo():
 	for weapon in weapons:
-		if weapon.name == "Pashupatastra":
+		if weapon.name == "Bow_apollo":
 			return weapon
 	return null
 	
+func get_Mjölnir():
+	for weapon in weapons:
+		if weapon.name == "Mjölnir":
+			return weapon
+	return null

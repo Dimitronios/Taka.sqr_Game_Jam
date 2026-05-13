@@ -1,6 +1,6 @@
-[gd_scene format=3 uid="uid://djsyx2d785h2b"]
+[gd_scene format=3 uid="uid://dsfdpex46r8uv"]
 
-[ext_resource type="Script" uid="uid://dpvlb3wdp1su8" path="res://bow_apollo.gd" id="1_xpjig"]
+[ext_resource type="Script" path="res://bow_apollo.gd" id="1_xpjig"]
 [ext_resource type="Texture2D" uid="uid://y5cra8d7q2sa" path="res://weaponstuff/fantasy_epicweapons_pack1_nobg.png" id="2_xpjig"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_nthgb"]

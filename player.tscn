@@ -1,14 +1,14 @@
 [gd_scene format=3 uid="uid://dsw8raqgacxsc"]
 
 [ext_resource type="Script" uid="uid://bjpua3hfywlnl" path="res://player.gd" id="1_73bic"]
-[ext_resource type="PackedScene" uid="uid://pbmyh1qru7p" path="res://characters/happy_boo/happy_boo.tscn" id="2_bl5ih"]
-[ext_resource type="PackedScene" uid="uid://cphcr81upg72i" path="res://gun.tscn" id="3_bt0kc"]
+[ext_resource type="PackedScene" path="res://characters/happy_boo/happy_boo.tscn" id="2_bl5ih"]
+[ext_resource type="PackedScene" path="res://gun.tscn" id="3_bt0kc"]
 [ext_resource type="PackedScene" uid="uid://ccf80uiykqbrp" path="res://kusanagi.tscn" id="4_hqtel"]
 [ext_resource type="PackedScene" path="res://mjölnir.tscn" id="5_sweqy"]
 [ext_resource type="PackedScene" path="res://pashupatastra.tscn" id="6_2hs0m"]
 [ext_resource type="PackedScene" uid="uid://c2mcuoyumtw7y" path="res://hou_yis.tscn" id="7_1jxqw"]
 [ext_resource type="PackedScene" uid="uid://bkk50m61iuphq" path="res://gungnir.tscn" id="8_dw050"]
-[ext_resource type="PackedScene" path="res://bow_apollo.tscn" id="9_b26j0"]
+[ext_resource type="PackedScene" uid="uid://dsfdpex46r8uv" path="res://bow_apollo.tscn" id="9_b26j0"]
 [ext_resource type="PackedScene" path="res://poseidon_trident.tscn" id="10_n7ghd"]
 [ext_resource type="PackedScene" uid="uid://nswij5255tln" path="res://shield_achilles.tscn" id="11_nvl01"]
 
