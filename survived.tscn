@@ -1,0 +1,132 @@
+[gd_scene format=3 uid="uid://beblvxipqpukn"]
+
+[ext_resource type="Script" uid="uid://c4qi4n6ga712v" path="res://WaveCL.gd" id="1_hr01w"]
+[ext_resource type="Texture2D" uid="uid://3hggolopqmp" path="res://kusanagi.png" id="2_hr01w"]
+[ext_resource type="Texture2D" uid="uid://mrmhqka43fym" path="res://gungnir.png" id="3_hr01w"]
+[ext_resource type="Texture2D" uid="uid://byd1n85wgiolo" path="res://shield.png" id="4_3tkwi"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_hr01w"]
+font_size = 32
+
+[sub_resource type="LabelSettings" id="LabelSettings_3tkwi"]
+font_size = 64
+
+[sub_resource type="LabelSettings" id="LabelSettings_j67vh"]
+font_size = 24
+
+[sub_resource type="LabelSettings" id="LabelSettings_jpc8y"]
+line_spacing = 0.0
+font_size = 24
+
+[sub_resource type="LabelSettings" id="LabelSettings_ipe8w"]
+font_size = 24
+
+[node name="Survived" type="CanvasLayer" unique_id=723585942]
+
+[node name="Control" type="Control" parent="." unique_id=347203776]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1911.0
+offset_bottom = 1068.0
+script = ExtResource("1_hr01w")
+
+[node name="Panel" type="Panel" parent="Control" unique_id=1192856414]
+layout_mode = 0
+offset_left = -12.0
+offset_top = 23.0
+offset_right = 1897.0
+offset_bottom = 1082.0
+
+[node name="Wave" type="Label" parent="Control/Panel" unique_id=1482656786]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -119.5
+offset_top = -461.5
+offset_right = 130.5
+offset_bottom = -404.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Wave cleared"
+label_settings = SubResource("LabelSettings_hr01w")
+vertical_alignment = 1
+
+[node name="Weapon" type="Label" parent="Control/Panel" unique_id=541330955]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 665.0
+offset_top = 254.0
+offset_right = 1232.0
+offset_bottom = 342.0
+text = "Choose a weapon "
+label_settings = SubResource("LabelSettings_3tkwi")
+
+[node name="Choise" type="TextureButton" parent="Control/Panel" unique_id=1104698061]
+layout_mode = 0
+offset_left = 249.0
+offset_top = 371.0
+offset_right = 520.0
+offset_bottom = 627.0
+texture_normal = ExtResource("2_hr01w")
+
+[node name="choise2" type="TextureButton" parent="Control/Panel" unique_id=1462153083]
+layout_mode = 0
+offset_left = 1362.0
+offset_top = 358.0
+offset_right = 1618.0
+offset_bottom = 614.0
+texture_normal = ExtResource("3_hr01w")
+
+[node name="Choise3" type="TextureButton" parent="Control/Panel" unique_id=158680999]
+layout_mode = 0
+offset_left = 810.0
+offset_top = 360.0
+offset_right = 1066.0
+offset_bottom = 616.0
+texture_normal = ExtResource("4_3tkwi")
+
+[node name="Description1" type="Label" parent="Control/Panel" unique_id=385935241]
+layout_mode = 0
+offset_left = 666.0
+offset_top = 630.0
+offset_right = 1167.0
+offset_bottom = 834.0
+text = "-Shield of Achilles
+Forged by Hephaestus himself,
+ this divine shield follows your every move, 
+crushing all in its path."
+label_settings = SubResource("LabelSettings_j67vh")
+horizontal_alignment = 1
+
+[node name="Description2" type="Label" parent="Control/Panel" unique_id=168433056]
+layout_mode = 0
+offset_left = 149.0
+offset_top = 627.0
+offset_right = 581.0
+offset_bottom = 770.0
+text = "			-Kusanagi 
+The legendary Japanese sword 
+that cuts through the wind itself,
+ firing swift slashes at blinding speed."
+label_settings = SubResource("LabelSettings_jpc8y")
+horizontal_alignment = 1
+vertical_alignment = 3
+
+[node name="Description3" type="Label" parent="Control/Panel" unique_id=1340557296]
+layout_mode = 0
+offset_left = 1205.0
+offset_top = 626.0
+offset_right = 1759.0
+offset_bottom = 816.0
+text = "-Gungnir 
+Odin's cursed spear 
+never misses its mark, 
+hunting down enemies with relentless precision"
+label_settings = SubResource("LabelSettings_ipe8w")
+horizontal_alignment = 1
+
+[connection signal="pressed" from="Control/Panel/Choise" to="Control" method="_on_choise_pressed"]
+[connection signal="pressed" from="Control/Panel/choise2" to="Control" method="_on_choise_2_pressed"]

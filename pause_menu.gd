@@ -1,17 +1,16 @@
 extends Control
 
 func _ready() -> void:
-	hide() 
+	pass
 
-func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("ui_cancel"):
-		get_tree().paused = !get_tree().paused
-		
-		visible = get_tree().paused
+func _process(delta: float) -> void:
+	if Input.is_action_pressed("ui_cancel") and visible == false :
+		get_tree().paused = true
+		visible = true
 
 func _on_resume_pressed() -> void:
 	get_tree().paused = false
-	hide()
+	visible = false
 
 func _on_quit_pressed() -> void:
 	get_tree().paused = false
@@ -19,4 +18,5 @@ func _on_quit_pressed() -> void:
 
 func _on_main_menu_pressed() -> void:
 	get_tree().paused = false
+	visible = false
 	get_tree().change_scene_to_file("res://main_menu.tscn")

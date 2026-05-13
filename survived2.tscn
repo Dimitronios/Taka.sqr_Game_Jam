@@ -1,0 +1,166 @@
+[gd_scene format=3 uid="uid://bp4uxeo6ceqm2"]
+
+[ext_resource type="Texture2D" uid="uid://crynfsqlvlqkl" path="res://trident.png" id="1_7bkf7"]
+[ext_resource type="Texture2D" uid="uid://c3yvqeby1rhhy" path="res://weaponstuff/thor.png" id="2_xapq6"]
+[ext_resource type="Texture2D" uid="uid://4306a7etk6a3" path="res://weaponstuff/akollonas.png" id="3_tocr5"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_hr01w"]
+font_size = 32
+
+[sub_resource type="LabelSettings" id="LabelSettings_3tkwi"]
+font_size = 64
+
+[sub_resource type="LabelSettings" id="LabelSettings_j67vh"]
+font_size = 24
+
+[sub_resource type="LabelSettings" id="LabelSettings_jpc8y"]
+line_spacing = 0.0
+font_size = 24
+
+[sub_resource type="LabelSettings" id="LabelSettings_7bkf7"]
+font_size = 24
+
+[node name="Survived" type="CanvasLayer" unique_id=723585942]
+
+[node name="Control" type="Control" parent="." unique_id=347203776]
+layout_mode = 3
+anchor_right = 0.33645833
+anchor_bottom = 0.34907407
+offset_right = 1276.0
+offset_bottom = 713.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Panel" type="Panel" parent="Control" unique_id=1192856414]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.010926119
+anchor_top = 0.014678899
+anchor_right = 0.010926119
+anchor_bottom = 0.014678899
+offset_left = 4.0
+offset_top = -7.0
+offset_right = 1908.0
+offset_bottom = 1063.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Wave" type="Label" parent="Control/Panel" unique_id=1482656786]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.48765758
+anchor_top = 0.34813085
+anchor_right = 0.48792017
+anchor_bottom = 0.34813085
+offset_left = -78.5
+offset_top = -314.5
+offset_right = 171.5
+offset_bottom = -257.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Wave cleared"
+label_settings = SubResource("LabelSettings_hr01w")
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Weapon" type="Label" parent="Control/Panel" unique_id=541330955]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.120273106
+anchor_top = 0.019626169
+anchor_right = 0.120273106
+anchor_bottom = 0.019626169
+offset_left = 417.0
+offset_top = 114.0
+offset_right = 984.0
+offset_bottom = 236.0
+text = "Choose a weapon "
+label_settings = SubResource("LabelSettings_3tkwi")
+metadata/_edit_use_anchors_ = true
+
+[node name="Choise1" type="TextureButton" parent="Control/Panel" unique_id=1104698061]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.06144958
+anchor_top = 0.08037383
+anchor_right = 0.0036764706
+anchor_bottom = 0.23271029
+offset_left = 377.0
+offset_top = 262.0
+offset_right = 509.0
+offset_bottom = 355.0
+texture_normal = ExtResource("1_7bkf7")
+metadata/_edit_use_anchors_ = true
+
+[node name="choise2" type="TextureButton" parent="Control/Panel" unique_id=1462153083]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.04621849
+anchor_top = 0.11401869
+anchor_right = 0.020483194
+anchor_bottom = 0.14392523
+offset_left = 854.0
+offset_top = 247.0
+offset_right = 983.0
+offset_bottom = 375.0
+texture_normal = ExtResource("2_xapq6")
+metadata/_edit_use_anchors_ = true
+
+[node name="choise3" type="TextureButton" parent="Control/Panel" unique_id=2104184405]
+layout_mode = 0
+offset_left = 1295.0
+offset_top = 385.0
+offset_right = 1551.0
+offset_bottom = 545.0
+texture_normal = ExtResource("3_tocr5")
+
+[node name="Description1" type="Label" parent="Control/Panel" unique_id=385935241]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.019432774
+anchor_top = 0.16261682
+anchor_right = -0.019432774
+anchor_bottom = 0.16261682
+offset_left = 691.0
+offset_top = 417.0
+offset_right = 1162.0
+offset_bottom = 621.0
+text = "-Mjölnir 
+Thor's mighty hammer 
+that always finds its way home
+— and brings a storm of lightning with it."
+label_settings = SubResource("LabelSettings_j67vh")
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Description2" type="Label" parent="Control/Panel" unique_id=168433056]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.05357143
+anchor_top = 0.17009346
+anchor_right = -0.05357143
+anchor_bottom = 0.17009346
+offset_left = 232.0
+offset_top = 420.0
+offset_right = 664.0
+offset_bottom = 563.0
+text = "-Poseidon's Trident
+Hurled across the battlefield, 
+it stays on the on the ground
+  leaving a wave of destruction in its wake."
+label_settings = SubResource("LabelSettings_jpc8y")
+horizontal_alignment = 1
+vertical_alignment = 3
+metadata/_edit_use_anchors_ = true
+
+[node name="Description3" type="Label" parent="Control/Panel" unique_id=540273945]
+layout_mode = 0
+offset_left = 1202.0
+offset_top = 580.0
+offset_right = 1631.0
+offset_bottom = 828.0
+text = "-Apollo's Bow
+Four divine arrows
+ that seek out enemies on their own, 
+blessed by the god of light himself.
+"
+label_settings = SubResource("LabelSettings_7bkf7")
+horizontal_alignment = 1

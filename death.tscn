@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://du30creot0gs6"]
+
+[ext_resource type="Texture2D" uid="uid://bh4hi6udtqg0j" path="res://Large Buttons/DeathSc2.png" id="1_4868a"]
+[ext_resource type="Script" uid="uid://dghr1aeytw6vg" path="res://DeathSc.gd" id="1_f0m10"]
+[ext_resource type="Texture2D" uid="uid://cf2adaam5323c" path="res://Large Buttons/Large Buttons/Square Buttons/Return Square Button.png" id="1_lf77f"]
+[ext_resource type="Texture2D" uid="uid://c6yhrtwoh5rib" path="res://Large Buttons/Large Buttons/Square Buttons/Home Square Button.png" id="2_531me"]
+
+[node name="Death" type="CanvasLayer" unique_id=1764803003]
+
+[node name="Deathsc" type="Control" parent="." unique_id=428171089]
+process_mode = 2
+layout_mode = 3
+anchors_preset = 0
+offset_left = -10.0
+offset_top = 45.0
+offset_right = 1910.0
+offset_bottom = 1082.0
+script = ExtResource("1_f0m10")
+
+[node name="PanelContainer" type="Panel" parent="Deathsc" unique_id=346513757]
+process_mode = 3
+layout_mode = 0
+offset_left = 10.0
+offset_top = -51.0
+offset_right = 1928.0
+offset_bottom = 1023.0
+
+[node name="Label" type="TextureRect" parent="Deathsc/PanelContainer" unique_id=976046773]
+layout_mode = 0
+offset_left = 517.0
+offset_top = 96.0
+offset_right = 1435.0
+offset_bottom = 669.75
+texture = ExtResource("1_4868a")
+expand_mode = 5
+
+[node name="Retry" type="TextureButton" parent="Deathsc/PanelContainer" unique_id=90873903]
+layout_mode = 0
+offset_left = 135.0
+offset_top = 193.0
+offset_right = 335.0
+offset_bottom = 393.0
+texture_normal = ExtResource("1_lf77f")
+
+[node name="Main_Menu" type="TextureButton" parent="Deathsc/PanelContainer" unique_id=1143313253]
+layout_mode = 0
+offset_left = 132.0
+offset_top = 443.0
+offset_right = 332.0
+offset_bottom = 643.0
+texture_normal = ExtResource("2_531me")
+
+[connection signal="pressed" from="Deathsc/PanelContainer/Retry" to="Deathsc" method="_on_retry_pressed"]
+[connection signal="pressed" from="Deathsc/PanelContainer/Main_Menu" to="Deathsc" method="_on_main_menu_pressed"]
