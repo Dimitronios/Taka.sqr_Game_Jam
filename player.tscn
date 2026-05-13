@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dsw8raqgacxsc"]
 
 [ext_resource type="Script" uid="uid://bjpua3hfywlnl" path="res://player.gd" id="1_73bic"]
-[ext_resource type="PackedScene" uid="uid://pbmyh1qru7p" path="res://characters/happy_boo/happy_boo.tscn" id="2_bl5ih"]
+[ext_resource type="Texture2D" uid="uid://dkomx6ecxo8jr" path="res://Eucrasius3.png" id="2_nvl01"]
 [ext_resource type="PackedScene" uid="uid://cphcr81upg72i" path="res://gun.tscn" id="3_bt0kc"]
 [ext_resource type="PackedScene" uid="uid://ccf80uiykqbrp" path="res://kusanagi.tscn" id="4_hqtel"]
 [ext_resource type="PackedScene" uid="uid://dn28ychv3mriu" path="res://mjölnir.tscn" id="5_sweqy"]
@@ -26,8 +26,8 @@ motion_mode = 1
 script = ExtResource("1_73bic")
 max_health = 40
 
-[node name="HappyBoo" parent="." unique_id=984748070 instance=ExtResource("2_bl5ih")]
-unique_name_in_owner = true
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1033435147]
+texture = ExtResource("2_nvl01")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2129353866]
 shape = SubResource("RectangleShape2D_csncd")
