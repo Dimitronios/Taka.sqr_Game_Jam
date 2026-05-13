@@ -2,13 +2,15 @@
 
 [ext_resource type="Script" uid="uid://dsgxioo8wstff" path="res://game.gd" id="1_qclsr"]
 [ext_resource type="PackedScene" uid="uid://dsw8raqgacxsc" path="res://player.tscn" id="2_a7q7f"]
-[ext_resource type="Texture2D" uid="uid://q5tuijwqsnc2" path="res://background.png" id="2_l26od"]
+[ext_resource type="Texture2D" uid="uid://c08o0d810baou" path="res://j6ZVIW.png" id="3_l26od"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_qqaft"]
 
 [sub_resource type="Curve2D" id="Curve2D_cp6e5"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, -806, -371, 0, 0, 0, 0, -1004, -196, 0, 0, 0, 0, -1091, 225, 0, 0, 0, 0, -1034, 715, 0, 0, 0, 0, -780, 810, 0, 0, 0, 0, -328, 855, 0, 0, 0, 0, 154, 878, 0, 0, 0, 0, 690, 795, 0, 0, 0, 0, 1009, 658, 0, 0, 0, 0, 1164, 442, 0, 0, 0, 0, 1157, 43, 0, 0, 0, 0, 1104, -177, 0, 0, 0, 0, 971, -257, 0, 0, 0, 0, 777, -345, 0, 0, 0, 0, 656, -413, 0, 0, 0, 0, 25, -420, 0, 0, 0, 0, -795, -367, 0, 0, 0, 0, -806, -371)
+"points": PackedVector2Array(0, 0, 0, 0, -806, -371, 0, 0, 0, 0, -1004, -196, 0, 0, 0, 0, -1091, 225, 0, 0, 0, 0, -927.20374, 619.363, 0, 0, 0, 0, -740.222, 638.62317, 0, 0, 0, 0, -328, 855, 0, 0, 0, 0, 154, 878, 0, 0, 0, 0, 690, 795, 0, 0, 0, 0, 1009, 658, 0, 0, 0, 0, 1164, 442, 0, 0, 0, 0, 1245.8597, 244.04048, 0, 0, 0, 0, 1157, 43, 0, 0, 0, 0, 1104, -177, 0, 0, 0, 0, 971, -257, 0, 0, 0, 0, 777, -345, 0, 0, 0, 0, 656, -413, 0, 0, 0, 0, 86.69711, -579.4298, 0, 0, 0, 0, -795, -367, 0, 0, 0, 0, -806, -371)
 }
-point_count = 18
+point_count = 19
 
 [node name="Game" type="Node2D" unique_id=327747119]
 y_sort_enabled = true
@@ -25,22 +27,24 @@ autostart = true
 
 [node name="Player" parent="." unique_id=1174028023 instance=ExtResource("2_a7q7f")]
 
-[node name="Background" type="Sprite2D" parent="." unique_id=2026518299]
+[node name="Background" type="Sprite2D" parent="." unique_id=1797359161]
 z_index = -1
-position = Vector2(-28.427902, -152.99991)
-scale = Vector2(2.0580351, 2.6350627)
-texture = ExtResource("2_l26od")
+position = Vector2(-24.499947, -214.1019)
+scale = Vector2(3.9592009, 2.952948)
+texture = ExtResource("3_l26od")
 
-[node name="ArenaBorders" type="StaticBody2D" parent="." unique_id=1805192637]
+[node name="ArenaBorders" type="StaticBody2D" parent="." unique_id=2080417662]
+physics_material_override = SubResource("PhysicsMaterial_qqaft")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ArenaBorders" unique_id=254754903]
-position = Vector2(-30, 26)
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ArenaBorders" unique_id=2039338760]
+position = Vector2(80.75928, -120.06506)
+scale = Vector2(0.97059995, 0.9288672)
 build_mode = 1
-polygon = PackedVector2Array(-1525, -694, -1622, -540, -1701, -389, -1755, -189, -1755, 200, -1726, 571, -1588, 814, -1296, 1027, -999, 1064, -644, 1077, -477, 1098, -464, 1006, -385, 985, -302, 1010, -302, 1052, 229, 1064, 242, 985, 400, 981, 413, 1073, 960, 1093, 1252, 1027, 1407, 918, 1541, 759, 1678, 534, 1687, 354, 1708, 87, 1683, -168, 1549, -506, 1470, -728, 1315, -811, 1064, -953, 693, -1029, 304, -1045, -460, -1041, -820, -1024, -1166, -907)
+polygon = PackedVector2Array(-1525, -694, -1622, -540, -1701, -389, -1755, -189, -1755, 200, -1726, 571, -1526.6428, 746.1401, -1354.5844, 899.01447, -1192.8287, 811.81146, -644, 1077, -609.6841, 1280.1239, -417.01974, 1307.0383, -307.8089, 1296.2726, -172.84082, 1262.8986, -0.78227997, 1290.8896, 166.12482, 1426.5387, 400.00082, 1415.773, 457.6971, 1105.7179, 582.3623, 1002.36615, 994.4785, 958.2264, 1252, 1027, 1233.506, 692.3111, 1519.9268, 697.694, 1678, 534, 1545.6841, 267.06192, 1525.0782, 6.529518, 1593.0774, -189.40807, 1549, -506, 1451.9276, -706.16656, 1280.8993, -515.6119, 999.63, -690.0179, 670.9673, -885.95544, 754.4208, -1158.3302, -447.92847, -1386.5652, -792.04553, -1092.6588, -1166, -907)
 
 [node name="Path2D" type="Path2D" parent="." unique_id=1949369106]
-position = Vector2(-46.301697, -323.41452)
-scale = Vector2(1.3370289, 1.4537752)
+position = Vector2(-114.2641, -336.50998)
+scale = Vector2(1.2949001, 1.3297381)
 curve = SubResource("Curve2D_cp6e5")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D" unique_id=949713007]
